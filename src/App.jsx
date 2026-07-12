@@ -1,20 +1,48 @@
 import { useCallback, useMemo, useState } from 'react'
 import { getLesson, getLevel } from './data/curriculum'
+import { useFlashcardProgress } from './hooks/useFlashcardProgress'
+import { useProfile } from './hooks/useProfile'
 import { useProgress } from './hooks/useProgress'
+import { FlashcardsPage } from './pages/FlashcardsPage'
 import { HomePage } from './pages/HomePage'
 import { LevelPage } from './pages/LevelPage'
 import { LessonPage } from './pages/LessonPage'
+import { ProfileGate } from './pages/ProfileGate'
 import './App.css'
 
 function App() {
   const {
+    configured,
+    profileId,
+    activeProfile,
+    profiles,
+    loading: profilesLoading,
+    error: profilesError,
+    selectProfile,
+    addProfile,
+    clearProfile,
+  } = useProfile()
+
+  const {
     progress,
+    ready: lessonsReady,
     getLessonProgress,
     savePosition,
     markComplete,
     setLastLesson,
     getLevelStats,
-  } = useProgress()
+  } = useProgress(profileId)
+
+  const {
+    progress: flashcardProgress,
+    ready: flashcardsReady,
+    setLevel: setFlashcardLevel,
+    setMode: setFlashcardMode,
+    setVoiceSpeed: setFlashcardVoiceSpeed,
+    markKnown,
+    markAgain,
+    resetKnownForLevel,
+  } = useFlashcardProgress(profileId)
 
   const [view, setView] = useState('home')
   const [selectedLevelId, setSelectedLevelId] = useState(null)
@@ -39,6 +67,10 @@ function App() {
     },
     [selectedLevelId, setLastLesson],
   )
+
+  const openFlashcards = useCallback(() => {
+    setView('flashcards')
+  }, [])
 
   const continueLearning = useCallback(() => {
     const last = progress.lastLesson
@@ -77,14 +109,61 @@ function App() {
     [selectedLevel, setLastLesson],
   )
 
+  const handleSwitchProfile = useCallback(() => {
+    setView('home')
+    setSelectedLevelId(null)
+    setActiveLesson(null)
+    clearProfile()
+  }, [clearProfile])
+
+  if (configured && !profileId) {
+    return (
+      <div className="app-shell">
+        <ProfileGate
+          profiles={profiles}
+          loading={profilesLoading}
+          error={profilesError}
+          onSelect={selectProfile}
+          onCreate={addProfile}
+        />
+      </div>
+    )
+  }
+
+  if (configured && profileId && (!lessonsReady || !flashcardsReady)) {
+    return (
+      <div className="app-shell">
+        <div className="page profile-gate">
+          <section className="hero-panel profile-panel">
+            <p className="eyebrow">Syncing</p>
+            <h1>Loading progress…</h1>
+            <p className="hero-copy">Pulling lesson and flashcard progress for {activeProfile?.name || 'you'}.</p>
+          </section>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="app-shell">
+      {configured && activeProfile ? (
+        <div className="profile-bar">
+          <span>
+            Learning as <strong>{activeProfile.name}</strong>
+          </span>
+          <button type="button" className="text-button" onClick={handleSwitchProfile}>
+            Switch
+          </button>
+        </div>
+      ) : null}
+
       {view === 'home' ? (
         <HomePage
           progress={progress}
           getLevelStats={getLevelStats}
           onSelectLevel={openLevel}
           onContinue={continueLearning}
+          onOpenFlashcards={openFlashcards}
         />
       ) : null}
 
@@ -110,6 +189,19 @@ function App() {
           onNavigate={handleNavigateLesson}
           onPositionChange={handlePositionChange}
           onComplete={handleComplete}
+        />
+      ) : null}
+
+      {view === 'flashcards' ? (
+        <FlashcardsPage
+          progress={flashcardProgress}
+          setLevel={setFlashcardLevel}
+          setMode={setFlashcardMode}
+          setVoiceSpeed={setFlashcardVoiceSpeed}
+          markKnown={markKnown}
+          markAgain={markAgain}
+          resetKnownForLevel={resetKnownForLevel}
+          onBack={() => setView('home')}
         />
       ) : null}
     </div>

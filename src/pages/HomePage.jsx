@@ -1,7 +1,13 @@
 import { LevelCard } from '../components/LevelCard'
 import { levels } from '../data/curriculum'
 
-export function HomePage({ progress, getLevelStats, onSelectLevel, onContinue }) {
+export function HomePage({
+  progress,
+  getLevelStats,
+  onSelectLevel,
+  onContinue,
+  onOpenFlashcards,
+}) {
   const lastLesson = progress.lastLesson
 
   return (
@@ -12,11 +18,20 @@ export function HomePage({ progress, getLevelStats, onSelectLevel, onContinue })
         <p className="hero-copy">
           Five levels, thirty lessons each. Press play, listen carefully, and speak along.
         </p>
-        {lastLesson ? (
-          <button type="button" className="primary-button continue-button" onClick={onContinue}>
-            Continue where you left off
+        <div className="hero-actions">
+          {lastLesson ? (
+            <button type="button" className="primary-button continue-button" onClick={onContinue}>
+              Continue where you left off
+            </button>
+          ) : null}
+          <button
+            type="button"
+            className={lastLesson ? 'secondary-button' : 'primary-button continue-button'}
+            onClick={onOpenFlashcards}
+          >
+            Practice flashcards
           </button>
-        ) : null}
+        </div>
       </section>
 
       <section className="levels-section">

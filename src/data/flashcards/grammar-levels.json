@@ -1,0 +1,87 @@
+{
+  "feature_levels": {
+    "present": 1,
+    "ir_a_future": 1,
+    "imperative": 1,
+    "progressive": 1,
+    "infinitive": 1,
+    "gerund": 1,
+    "preterite": 2,
+    "present_perfect": 2,
+    "imperfect": 3,
+    "future": 3,
+    "conditional": 4,
+    "present_subjunctive": 4,
+    "imperfect_subjunctive": 5,
+    "pluperfect": 5,
+    "future_perfect": 5,
+    "conditional_perfect": 5,
+    "unknown_finite": 5
+  },
+  "unlocks": {
+    "1": [
+      "gerund",
+      "imperative",
+      "infinitive",
+      "ir_a_future",
+      "present",
+      "progressive"
+    ],
+    "2": [
+      "gerund",
+      "imperative",
+      "infinitive",
+      "ir_a_future",
+      "present",
+      "present_perfect",
+      "preterite",
+      "progressive"
+    ],
+    "3": [
+      "future",
+      "gerund",
+      "imperative",
+      "imperfect",
+      "infinitive",
+      "ir_a_future",
+      "present",
+      "present_perfect",
+      "preterite",
+      "progressive"
+    ],
+    "4": [
+      "conditional",
+      "future",
+      "gerund",
+      "imperative",
+      "imperfect",
+      "infinitive",
+      "ir_a_future",
+      "present",
+      "present_perfect",
+      "present_subjunctive",
+      "preterite",
+      "progressive"
+    ],
+    "5": [
+      "conditional",
+      "conditional_perfect",
+      "future",
+      "future_perfect",
+      "gerund",
+      "imperative",
+      "imperfect",
+      "imperfect_subjunctive",
+      "infinitive",
+      "ir_a_future",
+      "pluperfect",
+      "present",
+      "present_perfect",
+      "present_subjunctive",
+      "preterite",
+      "progressive",
+      "unknown_finite"
+    ]
+  },
+  "notes": "Level 1 is strict present / ir a / imperative. Past unlocks at 2, imperfect+future at 3, conditional+present subjunctive at 4, imperfect subjunctive / advanced perfects at 5."
+}

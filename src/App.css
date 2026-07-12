@@ -110,7 +110,174 @@ p {
 }
 
 .continue-button {
+  margin-top: 0;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
   margin-top: 28px;
+}
+
+.flashcard-intro {
+  margin-bottom: 18px;
+}
+
+.flashcard-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.flashcard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  min-height: 280px;
+  padding: 32px 28px;
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 6px);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03));
+  box-shadow: var(--shadow);
+  color: inherit;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease;
+}
+
+.flashcard:hover {
+  border-color: rgba(255, 122, 24, 0.4);
+}
+
+.flashcard:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.flashcard.is-flipped {
+  border-color: rgba(255, 122, 24, 0.55);
+  background: linear-gradient(160deg, rgba(255, 122, 24, 0.16), rgba(255, 255, 255, 0.04));
+}
+
+.flashcard.is-audio-only {
+  min-height: 300px;
+}
+
+.flashcard-speak {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.25);
+  color: var(--heading);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.flashcard-speak:hover {
+  border-color: rgba(255, 122, 24, 0.55);
+  background: rgba(255, 122, 24, 0.18);
+  color: var(--accent);
+}
+
+.flashcard-speak:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.flashcard-side-label {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.flashcard-text {
+  color: var(--heading);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.flashcard-audio-prompt {
+  display: grid;
+  place-items: center;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 122, 24, 0.45);
+  background: radial-gradient(circle, rgba(255, 122, 24, 0.22), transparent 70%);
+  color: var(--heading);
+  font-size: 2rem;
+}
+
+.flashcard-meta {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.flashcard-steps {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.flashcard-steps span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.flashcard-steps span.is-active {
+  background: var(--accent);
+}
+
+.flashcard-actions,
+.flashcard-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.flashcard-toolbar {
+  margin-top: 28px;
+}
+
+.flashcard-empty {
+  padding: 36px 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--panel);
+  text-align: center;
+}
+
+.flashcard-empty h2 {
+  color: var(--heading);
+  margin-bottom: 10px;
+}
+
+.flashcard-empty p {
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 420px;
+  margin: 0 auto;
 }
 
 .levels-section {
@@ -297,6 +464,10 @@ p {
   margin-bottom: 18px;
 }
 
+.flashcard-speed-row {
+  margin-top: -6px;
+}
+
 .tab-button {
   padding: 10px 16px;
 }
@@ -466,6 +637,21 @@ p {
     padding-inline: 20px;
   }
 
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .flashcard {
+    min-height: 240px;
+    padding: 28px 20px;
+  }
+
+  .flashcard-actions .primary-button,
+  .flashcard-actions .secondary-button {
+    flex: 1;
+  }
+
   .player-meta,
   .player-nav {
     flex-direction: column;
@@ -479,4 +665,109 @@ p {
   .player-nav-group button {
     flex: 1;
   }
+}
+
+.profile-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--panel);
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.profile-bar strong {
+  color: var(--heading);
+  font-weight: 600;
+}
+
+.text-button {
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  padding: 4px 6px;
+  font-weight: 600;
+}
+
+.text-button:hover {
+  text-decoration: underline;
+}
+
+.profile-gate {
+  display: grid;
+  place-items: center;
+  min-height: min(70vh, 640px);
+}
+
+.profile-panel {
+  width: min(520px, 100%);
+}
+
+.profile-status,
+.profile-error {
+  margin-top: 14px;
+  color: var(--text-muted);
+}
+
+.profile-error {
+  color: #fca5a5;
+}
+
+.profile-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.profile-chip {
+  padding: 12px 18px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--panel-strong);
+  color: var(--heading);
+  font-weight: 600;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.profile-chip:hover {
+  border-color: rgba(255, 122, 24, 0.55);
+  background: var(--accent-soft);
+}
+
+.profile-form {
+  margin-top: 28px;
+  display: grid;
+  gap: 10px;
+}
+
+.profile-label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.profile-form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.profile-input {
+  flex: 1;
+  min-width: 180px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--heading);
+}
+
+.profile-input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
 }

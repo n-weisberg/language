@@ -9,19 +9,21 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "upload:audio": "node scripts/upload-to-cloudinary.js --concurrency=10",
-    "upload:audio:force": "node scripts/upload-to-cloudinary.js --force --concurrency=10"
+    "upload:audio:force": "node scripts/upload-to-cloudinary.js --force --concurrency=10",
+    "build:flashcards": ".venv-flashcards/bin/python scripts/build-flashcards.py"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.109.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6"
   },
   "devDependencies": {
-    "cloudinary": "^2.9.0",
-    "dotenv": "^17.2.3",
     "@eslint/js": "^10.0.1",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
+    "cloudinary": "^2.9.0",
+    "dotenv": "^17.2.3",
     "eslint": "^10.3.0",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.2",
