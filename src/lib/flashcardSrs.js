@@ -142,6 +142,21 @@ export function countScheduled(deck, cards = {}) {
 
 export const FLASHCARD_MODES = ['en-es', 'es-en', 'listen']
 
+/** Card content sources. Each keeps an independent SRS schedule. */
+export const FLASHCARD_SOURCES = ['phrases', 'pimsleur', 'numbers']
+export const DEFAULT_FLASHCARD_SOURCE = 'phrases'
+
+/**
+ * Storage key for a source+mode SRS bucket. The default `phrases` source keeps
+ * bare mode keys (`en-es`) for backward compatibility with existing progress;
+ * other sources are namespaced (`pimsleur:en-es`).
+ */
+export function modeStorageKey(source, mode) {
+  const m = FLASHCARD_MODES.includes(mode) ? mode : 'en-es'
+  const s = FLASHCARD_SOURCES.includes(source) ? source : DEFAULT_FLASHCARD_SOURCE
+  return s === DEFAULT_FLASHCARD_SOURCE ? m : `${s}:${m}`
+}
+
 export function emptyModeState() {
   return {
     reviewCount: 0,
@@ -159,8 +174,8 @@ export function emptyByMode() {
   }
 }
 
-export function getModeState(progress, mode = 'en-es') {
-  const key = FLASHCARD_MODES.includes(mode) ? mode : 'en-es'
+export function getModeState(progress, mode = 'en-es', source = DEFAULT_FLASHCARD_SOURCE) {
+  const key = modeStorageKey(source, mode)
   return progress?.byMode?.[key] ?? emptyModeState()
 }
 
@@ -236,25 +251,26 @@ export function migrateLegacyCardState(progress) {
     next = { ...next, byMode }
     changed = true
   } else {
-    const byMode = { ...emptyByMode() }
-    for (const mode of FLASHCARD_MODES) {
-      byMode[mode] = {
+    // Normalize every bucket (base modes + namespaced sources like `pimsleur:en-es`)
+    const byMode = { ...emptyByMode(), ...next.byMode }
+    for (const key of Object.keys(byMode)) {
+      byMode[key] = {
         ...emptyModeState(),
-        ...(next.byMode[mode] ?? {}),
-        cards: next.byMode[mode]?.cards ?? {},
-        known: next.byMode[mode]?.known ?? {},
-        again: next.byMode[mode]?.again ?? {},
-        reviewCount: next.byMode[mode]?.reviewCount ?? 0,
+        ...(byMode[key] ?? {}),
+        cards: byMode[key]?.cards ?? {},
+        known: byMode[key]?.known ?? {},
+        again: byMode[key]?.again ?? {},
+        reviewCount: byMode[key]?.reviewCount ?? 0,
       }
     }
     next = { ...next, byMode }
   }
 
   const byMode = { ...next.byMode }
-  for (const mode of FLASHCARD_MODES) {
-    const migrated = migrateKnownAgainIntoCards(byMode[mode] ?? emptyModeState())
-    if (migrated !== byMode[mode]) {
-      byMode[mode] = migrated
+  for (const key of Object.keys(byMode)) {
+    const migrated = migrateKnownAgainIntoCards(byMode[key] ?? emptyModeState())
+    if (migrated !== byMode[key]) {
+      byMode[key] = migrated
       changed = true
     }
   }
@@ -274,7 +290,9 @@ export function modeProgressIsEmpty(bucket) {
 export function flashcardsProgressIsEmpty(progress) {
   if (!progress) return true
   if (progress.byMode) {
-    return FLASHCARD_MODES.every((mode) => modeProgressIsEmpty(progress.byMode[mode]))
+    const keys = Object.keys(progress.byMode)
+    if (keys.length === 0) return true
+    return keys.every((key) => modeProgressIsEmpty(progress.byMode[key]))
   }
   return (
     Object.keys(progress.cards ?? {}).length === 0 &&

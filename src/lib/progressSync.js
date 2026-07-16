@@ -17,6 +17,7 @@ function emptyByMode() {
 const DEFAULT_FLASHCARDS = {
   level: 1,
   mode: 'en-es',
+  source: 'phrases',
   voiceSpeed: 1,
   byMode: emptyByMode(),
   lastCardId: null,
@@ -37,6 +38,9 @@ export function defaultFlashcardsProgress() {
 export function normalizeFlashcardsProgress(raw) {
   const parsed = raw && typeof raw === 'object' ? raw : {}
   const mode = ['en-es', 'es-en', 'listen'].includes(parsed.mode) ? parsed.mode : 'en-es'
+  const source = ['phrases', 'pimsleur', 'numbers'].includes(parsed.source)
+    ? parsed.source
+    : 'phrases'
   const voiceSpeed = [0.7, 0.85, 1].includes(parsed.voiceSpeed) ? parsed.voiceSpeed : 1
 
   let byMode = parsed.byMode
@@ -53,6 +57,7 @@ export function normalizeFlashcardsProgress(raw) {
   return {
     level: parsed.level ?? 1,
     mode,
+    source,
     voiceSpeed,
     byMode,
     // Legacy flat fields retained for one-time migration

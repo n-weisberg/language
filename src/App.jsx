@@ -38,6 +38,7 @@ function App() {
     ready: flashcardsReady,
     setLevel: setFlashcardLevel,
     setMode: setFlashcardMode,
+    setSource: setFlashcardSource,
     setVoiceSpeed: setFlashcardVoiceSpeed,
     markKnown,
     markAgain,
@@ -197,6 +198,7 @@ function App() {
           progress={flashcardProgress}
           setLevel={setFlashcardLevel}
           setMode={setFlashcardMode}
+          setSource={setFlashcardSource}
           setVoiceSpeed={setFlashcardVoiceSpeed}
           markKnown={markKnown}
           markAgain={markAgain}

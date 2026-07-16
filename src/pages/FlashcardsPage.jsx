@@ -1,6 +1,11 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Header } from '../components/Header'
-import { getFlashcardsForLevel } from '../data/flashcards'
+import {
+  getFlashcardsForLevel,
+  getPimsleurFlashcardsForLevel,
+  getPimsleurLevels,
+  pickRandomNumberCard,
+} from '../data/flashcards'
 import {
   buildAheadQueue,
   buildDueQueue,
@@ -20,6 +25,17 @@ import {
 } from '../lib/speakSpanish'
 
 const LEVELS = [1, 2, 3, 4, 5]
+const PIMSLEUR_LEVELS = getPimsleurLevels()
+
+const SOURCES = [
+  { id: 'phrases', label: 'Phrases', hint: 'Grammar-tagged phrases (Tatoeba)' },
+  { id: 'pimsleur', label: 'Pimsleur', hint: 'Vocab from Pimsleur lessons' },
+  {
+    id: 'numbers',
+    label: 'Numbers',
+    hint: 'Written numbers 0–999 — random draws, no spaced repetition',
+  },
+]
 
 const MODES = [
   { id: 'en-es', label: 'EN → ES', hint: 'English prompt, Spanish answer' },
@@ -45,11 +61,12 @@ function maxStep(mode) {
 
 function cardView(mode, step, card) {
   if (!card) return { label: '', text: '', meta: '', showSpeaker: false }
+  const numberSide = card.source === 'numbers' ? 'Number' : 'English'
 
   if (mode === 'en-es') {
     if (step === 0) {
       return {
-        label: 'English',
+        label: numberSide,
         text: card.en,
         meta: 'Tap to reveal Spanish',
         showSpeaker: false,
@@ -68,12 +85,12 @@ function cardView(mode, step, card) {
       return {
         label: 'Spanish',
         text: card.es,
-        meta: 'Tap to reveal English',
+        meta: `Tap to reveal ${numberSide.toLowerCase()}`,
         showSpeaker: true,
       }
     }
     return {
-      label: 'English',
+      label: numberSide,
       text: card.en,
       meta: card.features?.join(' · ') || 'Tap to hide',
       showSpeaker: true,
@@ -109,52 +126,80 @@ export function FlashcardsPage({
   progress,
   setLevel,
   setMode,
+  setSource,
   setVoiceSpeed,
   markKnown,
   markAgain,
   resetKnownForLevel,
   onBack,
 }) {
-  const level = progress.level ?? 1
+  const source = SOURCES.some((item) => item.id === progress.source) ? progress.source : 'phrases'
+  const availableLevels =
+    source === 'numbers' ? [] : source === 'pimsleur' ? PIMSLEUR_LEVELS : LEVELS
+  const requestedLevel = progress.level ?? 1
+  const level = availableLevels.length
+    ? availableLevels.includes(requestedLevel)
+      ? requestedLevel
+      : availableLevels[availableLevels.length - 1]
+    : 1
+  const isNumbers = source === 'numbers'
   const mode = progress.mode ?? 'en-es'
   const voiceSpeed = normalizeVoiceSpeed(progress.voiceSpeed ?? 1)
-  const modeState = getModeState(progress, mode)
+  const modeState = getModeState(progress, mode, source)
   const reviewCount = modeState.reviewCount ?? 0
   const cards = modeState.cards ?? {}
   const scheduleVersion = progress.scheduleVersion ?? 0
-  const deck = useMemo(() => getFlashcardsForLevel(level), [level])
+  const deck = useMemo(() => {
+    if (isNumbers) return []
+    if (source === 'pimsleur') return getPimsleurFlashcardsForLevel(level)
+    return getFlashcardsForLevel(level)
+  }, [source, level, isNumbers])
   const [queue, setQueue] = useState([])
+  const [numberCard, setNumberCard] = useState(() => pickRandomNumberCard())
+  const [numberUpcoming, setNumberUpcoming] = useState(() => pickRandomNumberCard())
   const [step, setStep] = useState(0)
   const [sessionSeen, setSessionSeen] = useState(0)
   const [practicingAhead, setPracticingAhead] = useState(false)
 
   useEffect(() => {
+    if (isNumbers) {
+      setPracticingAhead(false)
+      setSessionSeen(0)
+      const next = pickRandomNumberCard()
+      setNumberCard(next)
+      setNumberUpcoming(pickRandomNumberCard(next?.id))
+      setStep(0)
+      cancelSpeech()
+      return
+    }
     setPracticingAhead(false)
     setSessionSeen(0)
     setQueue(buildDueQueue(deck, cards, reviewCount))
     setStep(0)
     cancelSpeech()
     // eslint-disable-next-line react-hooks/exhaustive-deps -- reset session when deck/level/mode changes
-  }, [deck, level, mode, scheduleVersion])
+  }, [deck, level, mode, scheduleVersion, source, isNumbers])
 
   // Rebuild after each answer so Again cards are pinned ~3 slots ahead
   useEffect(() => {
+    if (isNumbers) return
     setPracticingAhead(false)
     setQueue(buildDueQueue(deck, cards, reviewCount))
     setStep(0)
     cancelSpeech()
     // eslint-disable-next-line react-hooks/exhaustive-deps -- cards update with reviewCount per mode
-  }, [reviewCount, mode])
+  }, [reviewCount, mode, isNumbers])
 
   useEffect(() => {
     setStep(0)
     cancelSpeech()
   }, [mode])
 
-  const current = queue[0] ?? null
-  const upcoming = queue[1] ?? null
+  const current = isNumbers ? numberCard : (queue[0] ?? null)
+  const upcoming = isNumbers ? numberUpcoming : (queue[1] ?? null)
   const view = cardView(mode, step, current)
   const modeMeta = MODES.find((item) => item.id === mode) ?? MODES[0]
+  const sourceMeta = SOURCES.find((item) => item.id === source) ?? SOURCES[0]
   const currentAudioKey = current ? audioCacheKey(current.id, voiceSpeed) : null
   const upcomingAudioKey = upcoming ? audioCacheKey(upcoming.id, voiceSpeed) : null
 
@@ -193,11 +238,11 @@ export function FlashcardsPage({
     [],
   )
 
-  const dueNow = countDue(deck, cards, reviewCount)
-  const scheduled = countScheduled(deck, cards)
-  const remaining = queue.length
-  const progressPct = deck.length ? Math.round((scheduled / deck.length) * 100) : 0
-  const caughtUp = !current && dueNow === 0 && deck.length > 0
+  const dueNow = isNumbers ? 0 : countDue(deck, cards, reviewCount)
+  const scheduled = isNumbers ? 0 : countScheduled(deck, cards)
+  const remaining = isNumbers ? 0 : queue.length
+  const progressPct = !isNumbers && deck.length ? Math.round((scheduled / deck.length) * 100) : 0
+  const caughtUp = !isNumbers && !current && dueNow === 0 && deck.length > 0
 
   function finishCard() {
     cancelSpeech()
@@ -241,18 +286,29 @@ export function FlashcardsPage({
   }
 
   function handleKnow() {
-    if (!current) return
+    if (!current || isNumbers) return
     markKnown(current.id)
     finishCard()
   }
 
   function handleAgain() {
-    if (!current) return
+    if (!current || isNumbers) return
     markAgain(current.id)
     finishCard()
   }
 
+  function handleNextNumber() {
+    if (!isNumbers) return
+    cancelSpeech()
+    const next = numberUpcoming ?? pickRandomNumberCard(numberCard?.id)
+    setNumberCard(next)
+    setNumberUpcoming(pickRandomNumberCard(next?.id))
+    setStep(0)
+    setSessionSeen((count) => count + 1)
+  }
+
   function handleReset() {
+    if (isNumbers) return
     cancelSpeech()
     resetKnownForLevel(deck.map((card) => card.id))
     setPracticingAhead(false)
@@ -261,6 +317,7 @@ export function FlashcardsPage({
   }
 
   function handlePracticeAhead() {
+    if (isNumbers) return
     cancelSpeech()
     setPracticingAhead(true)
     setQueue(buildAheadQueue(deck, cards))
@@ -273,23 +330,50 @@ export function FlashcardsPage({
 
       <section className="level-intro flashcard-intro">
         <p>
-          {modeMeta.hint}. Grammar matched to Pimsleur Level {level}. {LEVEL_HINTS[level]} Each mode
-          has its own spaced-repetition schedule.
+          {sourceMeta.hint}. {modeMeta.hint}.{' '}
+          {isNumbers
+            ? 'Digit on one side, Spanish spelling on the other. Each draw is 50% from 0–100 and 50% from 101–999.'
+            : source === 'pimsleur'
+              ? `Vocabulary through Pimsleur Level ${level} (lessons 1–30). Each source and mode has its own spaced-repetition schedule.`
+              : `Grammar matched to Pimsleur Level ${level}. ${LEVEL_HINTS[level]} Each source and mode has its own spaced-repetition schedule.`}
         </p>
         <div className="level-stats flashcard-stats">
-          <span>{dueNow} due now</span>
-          <span>
-            {scheduled} / {deck.length} in rotation
-          </span>
-          <span>{sessionSeen} this session</span>
+          {isNumbers ? (
+            <span>{sessionSeen} this session</span>
+          ) : (
+            <>
+              <span>{dueNow} due now</span>
+              <span>
+                {scheduled} / {deck.length} in rotation
+              </span>
+              <span>{sessionSeen} this session</span>
+            </>
+          )}
         </div>
-        <div className="flashcard-progress">
-          <div className="progress-track">
-            <div className="progress-fill" style={{ width: `${progressPct}%` }} />
+        {!isNumbers ? (
+          <div className="flashcard-progress">
+            <div className="progress-track">
+              <div className="progress-fill" style={{ width: `${progressPct}%` }} />
+            </div>
+            <span className="level-progress-text">{progressPct}%</span>
           </div>
-          <span className="level-progress-text">{progressPct}%</span>
-        </div>
+        ) : null}
       </section>
+
+      <div className="tab-row" role="tablist" aria-label="Card source">
+        {SOURCES.map((item) => (
+          <button
+            key={item.id}
+            type="button"
+            role="tab"
+            aria-selected={source === item.id}
+            className={`tab-button ${source === item.id ? 'is-active' : ''}`}
+            onClick={() => setSource(item.id)}
+          >
+            {item.label}
+          </button>
+        ))}
+      </div>
 
       <div className="tab-row" role="tablist" aria-label="Practice mode">
         {MODES.map((item) => (
@@ -306,20 +390,22 @@ export function FlashcardsPage({
         ))}
       </div>
 
-      <div className="tab-row" role="tablist" aria-label="Pimsleur level filter">
-        {LEVELS.map((value) => (
-          <button
-            key={value}
-            type="button"
-            role="tab"
-            aria-selected={level === value}
-            className={`tab-button ${level === value ? 'is-active' : ''}`}
-            onClick={() => setLevel(value)}
-          >
-            Level {value}
-          </button>
-        ))}
-      </div>
+      {availableLevels.length ? (
+        <div className="tab-row" role="tablist" aria-label="Pimsleur level filter">
+          {availableLevels.map((value) => (
+            <button
+              key={value}
+              type="button"
+              role="tab"
+              aria-selected={level === value}
+              className={`tab-button ${level === value ? 'is-active' : ''}`}
+              onClick={() => setLevel(value)}
+            >
+              Level {value}
+            </button>
+          ))}
+        </div>
+      ) : null}
 
       {mode === 'listen' ? (
         <div className="tab-row flashcard-speed-row" role="tablist" aria-label="Voice speed">
@@ -383,8 +469,8 @@ export function FlashcardsPage({
             )}
             <span className="flashcard-meta">
               {view.meta}
-              {practicingAhead ? ' · practicing ahead' : ''}
-              {remaining ? ` · ${remaining} in queue` : ''}
+              {!isNumbers && practicingAhead ? ' · practicing ahead' : ''}
+              {!isNumbers && remaining ? ` · ${remaining} in queue` : ''}
             </span>
             {mode === 'listen' ? (
               <span className="flashcard-steps" aria-hidden="true">
@@ -396,12 +482,20 @@ export function FlashcardsPage({
           </div>
 
           <div className="flashcard-actions">
-            <button type="button" className="secondary-button" onClick={handleAgain}>
-              Again
-            </button>
-            <button type="button" className="primary-button" onClick={handleKnow}>
-              Know
-            </button>
+            {isNumbers ? (
+              <button type="button" className="primary-button" onClick={handleNextNumber}>
+                Next
+              </button>
+            ) : (
+              <>
+                <button type="button" className="secondary-button" onClick={handleAgain}>
+                  Again
+                </button>
+                <button type="button" className="primary-button" onClick={handleKnow}>
+                  Know
+                </button>
+              </>
+            )}
           </div>
         </>
       ) : (
@@ -423,14 +517,16 @@ export function FlashcardsPage({
         </section>
       )}
 
-      <div className="flashcard-toolbar">
-        <button type="button" className="secondary-button" onClick={handlePracticeAhead}>
-          Practice ahead
-        </button>
-        <button type="button" className="secondary-button" onClick={handleReset}>
-          Reset level
-        </button>
-      </div>
+      {!isNumbers ? (
+        <div className="flashcard-toolbar">
+          <button type="button" className="secondary-button" onClick={handlePracticeAhead}>
+            Practice ahead
+          </button>
+          <button type="button" className="secondary-button" onClick={handleReset}>
+            Reset level
+          </button>
+        </div>
+      ) : null}
     </div>
   )
 }

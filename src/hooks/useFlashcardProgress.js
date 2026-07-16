@@ -1,9 +1,11 @@
 import { useCallback, useEffect, useState } from 'react'
 import {
+  DEFAULT_FLASHCARD_SOURCE,
   emptyModeState,
   flashcardsProgressIsEmpty,
   getModeState,
   migrateLegacyCardState,
+  modeStorageKey,
   scheduleAgain,
   scheduleKnow,
 } from '../lib/flashcardSrs'
@@ -40,12 +42,14 @@ function writeLocal(profileId, data) {
   localStorage.setItem(localKey(profileId), JSON.stringify(data))
 }
 
-function updateModeBucket(current, mode, updater) {
-  const key = mode ?? current.mode ?? 'en-es'
+function updateModeBucket(current, updater) {
+  const mode = current.mode ?? 'en-es'
+  const source = current.source ?? DEFAULT_FLASHCARD_SOURCE
+  const key = modeStorageKey(source, mode)
   const byMode = { ...(current.byMode ?? {}) }
   const bucket = { ...emptyModeState(), ...(byMode[key] ?? {}) }
   byMode[key] = updater(bucket)
-  return { ...current, byMode, mode: key }
+  return { ...current, byMode }
 }
 
 export function useFlashcardProgress(profileId) {
@@ -139,6 +143,13 @@ export function useFlashcardProgress(profileId) {
     [updateProgress],
   )
 
+  const setSource = useCallback(
+    (source) => {
+      updateProgress((current) => ({ ...current, source }))
+    },
+    [updateProgress],
+  )
+
   const setVoiceSpeed = useCallback(
     (voiceSpeed) => {
       updateProgress((current) => ({
@@ -152,8 +163,7 @@ export function useFlashcardProgress(profileId) {
   const markKnown = useCallback(
     (cardId) => {
       updateProgress((current) => {
-        const mode = current.mode ?? 'en-es'
-        const next = updateModeBucket(current, mode, (bucket) => {
+        const next = updateModeBucket(current, (bucket) => {
           const reviewCount = (bucket.reviewCount ?? 0) + 1
           const cards = { ...(bucket.cards ?? {}) }
           cards[cardId] = scheduleKnow(cards[cardId], reviewCount)
@@ -172,8 +182,7 @@ export function useFlashcardProgress(profileId) {
   const markAgain = useCallback(
     (cardId) => {
       updateProgress((current) => {
-        const mode = current.mode ?? 'en-es'
-        const next = updateModeBucket(current, mode, (bucket) => {
+        const next = updateModeBucket(current, (bucket) => {
           const reviewCount = (bucket.reviewCount ?? 0) + 1
           const cards = { ...(bucket.cards ?? {}) }
           cards[cardId] = scheduleAgain(cards[cardId], reviewCount)
@@ -192,8 +201,7 @@ export function useFlashcardProgress(profileId) {
   const resetKnownForLevel = useCallback(
     (cardIds) => {
       updateProgress((current) => {
-        const mode = current.mode ?? 'en-es'
-        const next = updateModeBucket(current, mode, (bucket) => {
+        const next = updateModeBucket(current, (bucket) => {
           const known = { ...(bucket.known ?? {}) }
           const again = { ...(bucket.again ?? {}) }
           const cards = { ...(bucket.cards ?? {}) }
@@ -215,7 +223,8 @@ export function useFlashcardProgress(profileId) {
   )
 
   const mode = progress.mode ?? 'en-es'
-  const modeState = getModeState(progress, mode)
+  const source = progress.source ?? DEFAULT_FLASHCARD_SOURCE
+  const modeState = getModeState(progress, mode, source)
 
   const isKnown = useCallback(
     (cardId) => Boolean(modeState.cards?.[cardId]?.reps > 0),
@@ -227,6 +236,7 @@ export function useFlashcardProgress(profileId) {
     ready,
     setLevel,
     setMode,
+    setSource,
     setVoiceSpeed,
     markKnown,
     markAgain,
