@@ -2,7 +2,8 @@ import { useEffect, useMemo, useState } from 'react'
 import { Header } from '../components/Header'
 import {
   getFlashcardsForLevel,
-  getPimsleurFlashcardsForLevel,
+  getMaxCompletedPimsleurLessons,
+  getPimsleurFlashcardsForProgress,
   getPimsleurLevels,
   pickRandomNumberCard,
 } from '../data/flashcards'
@@ -29,7 +30,7 @@ const PIMSLEUR_LEVELS = getPimsleurLevels()
 
 const SOURCES = [
   { id: 'phrases', label: 'Phrases', hint: 'Grammar-tagged phrases (Tatoeba)' },
-  { id: 'pimsleur', label: 'Pimsleur', hint: 'Vocab from Pimsleur lessons' },
+  { id: 'pimsleur', label: 'Pimsleur', hint: 'Vocab from completed Pimsleur lessons' },
   {
     id: 'numbers',
     label: 'Numbers',
@@ -124,6 +125,7 @@ function cardView(mode, step, card) {
 
 export function FlashcardsPage({
   progress,
+  lessonProgress,
   setLevel,
   setMode,
   setSource,
@@ -143,6 +145,12 @@ export function FlashcardsPage({
       : availableLevels[availableLevels.length - 1]
     : 1
   const isNumbers = source === 'numbers'
+  const isPimsleur = source === 'pimsleur'
+  const unlockedByLevel = useMemo(
+    () => getMaxCompletedPimsleurLessons(lessonProgress),
+    [lessonProgress],
+  )
+  const unlockedThrough = unlockedByLevel[level] ?? 0
   const mode = progress.mode ?? 'en-es'
   const voiceSpeed = normalizeVoiceSpeed(progress.voiceSpeed ?? 1)
   const modeState = getModeState(progress, mode, source)
@@ -151,9 +159,9 @@ export function FlashcardsPage({
   const scheduleVersion = progress.scheduleVersion ?? 0
   const deck = useMemo(() => {
     if (isNumbers) return []
-    if (source === 'pimsleur') return getPimsleurFlashcardsForLevel(level)
+    if (isPimsleur) return getPimsleurFlashcardsForProgress(level, lessonProgress)
     return getFlashcardsForLevel(level)
-  }, [source, level, isNumbers])
+  }, [source, level, isNumbers, isPimsleur, lessonProgress])
   const [queue, setQueue] = useState([])
   const [numberCard, setNumberCard] = useState(() => pickRandomNumberCard())
   const [numberUpcoming, setNumberUpcoming] = useState(() => pickRandomNumberCard())
@@ -333,9 +341,12 @@ export function FlashcardsPage({
           {sourceMeta.hint}. {modeMeta.hint}.{' '}
           {isNumbers
             ? 'Digit on one side, Spanish spelling on the other. Each draw is 50% from 0–100 and 50% from 101–999.'
-            : source === 'pimsleur'
-              ? `Vocabulary through Pimsleur Level ${level} (lessons 1–30). Each source and mode has its own spaced-repetition schedule.`
+            : isPimsleur
+              ? unlockedThrough
+                ? `Unlocked through Level ${level} Lesson ${unlockedThrough} (based on completed audio lessons).`
+                : `No Level ${level} audio lessons marked done yet — complete a lesson to unlock vocab.`
               : `Grammar matched to Pimsleur Level ${level}. ${LEVEL_HINTS[level]} Each source and mode has its own spaced-repetition schedule.`}
+          {isPimsleur ? ' Each source and mode has its own spaced-repetition schedule.' : ''}
         </p>
         <div className="level-stats flashcard-stats">
           {isNumbers ? (
@@ -500,20 +511,30 @@ export function FlashcardsPage({
         </>
       ) : (
         <section className="flashcard-empty">
-          <h2>{caughtUp ? 'Caught up' : 'Deck clear'}</h2>
+          <h2>
+            {isPimsleur && deck.length === 0
+              ? 'Nothing unlocked yet'
+              : caughtUp
+                ? 'Caught up'
+                : 'Deck clear'}
+          </h2>
           <p>
-            {caughtUp
-              ? 'Nothing due right now. Cards you know will return after more reviews. Practice ahead to review early, or reset this level.'
-              : 'Practice ahead to keep going, or switch levels.'}
+            {isPimsleur && deck.length === 0
+              ? `Mark Level ${level} audio lessons as done to unlock matching vocab cards.`
+              : caughtUp
+                ? 'Nothing due right now. Cards you know will return after more reviews. Practice ahead to review early, or reset this level.'
+                : 'Practice ahead to keep going, or switch levels.'}
           </p>
-          <div className="flashcard-actions">
-            <button type="button" className="secondary-button" onClick={handlePracticeAhead}>
-              Practice ahead
-            </button>
-            <button type="button" className="primary-button" onClick={handleReset}>
-              Reset level
-            </button>
-          </div>
+          {!(isPimsleur && deck.length === 0) ? (
+            <div className="flashcard-actions">
+              <button type="button" className="secondary-button" onClick={handlePracticeAhead}>
+                Practice ahead
+              </button>
+              <button type="button" className="primary-button" onClick={handleReset}>
+                Reset level
+              </button>
+            </div>
+          ) : null}
         </section>
       )}
 

@@ -196,6 +196,7 @@ function App() {
       {view === 'flashcards' ? (
         <FlashcardsPage
           progress={flashcardProgress}
+          lessonProgress={progress}
           setLevel={setFlashcardLevel}
           setMode={setFlashcardMode}
           setSource={setFlashcardSource}

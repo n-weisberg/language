@@ -32,9 +32,41 @@ export function getPimsleurLevels() {
   return [...new Set(pimsleurFlashcards.map((card) => card.level))].sort((a, b) => a - b)
 }
 
+/**
+ * Highest completed audio unit per Pimsleur level from lesson progress.
+ * Keys look like `1:unit:23`. Reading/guide lessons are ignored.
+ */
+export function getMaxCompletedPimsleurLessons(lessonsProgress) {
+  const maxByLevel = {}
+  for (const [key, value] of Object.entries(lessonsProgress?.lessons ?? {})) {
+    if (!value?.completed) continue
+    const [levelId, type, lessonNum] = key.split(':')
+    if (type !== 'unit') continue
+    const level = Number(levelId)
+    const lesson = Number(lessonNum)
+    if (!Number.isFinite(level) || !Number.isFinite(lesson)) continue
+    maxByLevel[level] = Math.max(maxByLevel[level] ?? 0, lesson)
+  }
+  return maxByLevel
+}
+
 /** Cumulative deck: everything up to and including the selected level. */
 export function getPimsleurFlashcardsForLevel(level) {
   return pimsleurFlashcards.filter((card) => card.level <= level)
+}
+
+/**
+ * Cards unlocked by completed audio lessons, capped at the selected level tab.
+ * A card from level L / lesson N is included only if the user has completed
+ * unit N (or later) on that level.
+ */
+export function getPimsleurFlashcardsForProgress(selectedLevel, lessonsProgress) {
+  const maxByLevel = getMaxCompletedPimsleurLessons(lessonsProgress)
+  return pimsleurFlashcards.filter((card) => {
+    if (card.level > selectedLevel) return false
+    const unlockedThrough = maxByLevel[card.level] ?? 0
+    return card.lesson <= unlockedThrough
+  })
 }
 
 /** Cards for a single lesson, keyed by level + lesson number. */
