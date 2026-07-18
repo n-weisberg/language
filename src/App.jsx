@@ -7,6 +7,7 @@ import { FlashcardsPage } from './pages/FlashcardsPage'
 import { HomePage } from './pages/HomePage'
 import { LevelPage } from './pages/LevelPage'
 import { LessonPage } from './pages/LessonPage'
+import { ListeningPage } from './pages/ListeningPage'
 import { ProfileGate } from './pages/ProfileGate'
 import './App.css'
 
@@ -71,6 +72,10 @@ function App() {
 
   const openFlashcards = useCallback(() => {
     setView('flashcards')
+  }, [])
+
+  const openListening = useCallback(() => {
+    setView('listening')
   }, [])
 
   const continueLearning = useCallback(() => {
@@ -165,6 +170,7 @@ function App() {
           onSelectLevel={openLevel}
           onContinue={continueLearning}
           onOpenFlashcards={openFlashcards}
+          onOpenListening={openListening}
         />
       ) : null}
 
@@ -207,6 +213,8 @@ function App() {
           onBack={() => setView('home')}
         />
       ) : null}
+
+      {view === 'listening' ? <ListeningPage onBack={() => setView('home')} /> : null}
     </div>
   )
 }

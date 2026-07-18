@@ -7,6 +7,7 @@ export function HomePage({
   onSelectLevel,
   onContinue,
   onOpenFlashcards,
+  onOpenListening,
 }) {
   const lastLesson = progress.lastLesson
 
@@ -30,6 +31,9 @@ export function HomePage({
             onClick={onOpenFlashcards}
           >
             Practice flashcards
+          </button>
+          <button type="button" className="secondary-button" onClick={onOpenListening}>
+            Listening practice
           </button>
         </div>
       </section>

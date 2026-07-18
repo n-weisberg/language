@@ -1,16 +1,22 @@
 /** Card-count spaced repetition (SM-2-inspired, not calendar time). */
 
 export const SRS = {
-  firstInterval: 4,
+  /** Reviews until a newly-known card is due again. */
+  firstInterval: 12,
   againInterval: 3,
-  easeStart: 2.5,
+  easeStart: 2.6,
   easeMin: 1.3,
-  easeMax: 3.0,
-  easeKnownDelta: 0.05,
+  easeMax: 3.2,
+  easeKnownDelta: 0.1,
   easeAgainDelta: 0.2,
-  maxInterval: 400,
-  /** Limit brand-new cards in the working queue so retries aren't buried. */
+  maxInterval: 500,
+  /** Limit brand-new cards mixed into the working queue. */
   newCardCap: 12,
+  /**
+   * Mix a new card into the queue after every N due reviews so a long
+   * review backlog can't starve unseen cards (queue rebuilds each answer).
+   */
+  newCardEvery: 2,
 }
 
 export function defaultCardSrs() {
@@ -93,18 +99,55 @@ function shuffleByDue(dueCards, cards) {
   return sorted
 }
 
+/** Spread new cards through due reviews, and regularly lead with a new card.
+ * Leading matters because the UI rebuilds the queue after every answer and
+ * only shows queue[0] — appending news to the end would starve them forever
+ * whenever any review is due.
+ */
+export function interleaveNewCards(reviews, news, every = SRS.newCardEvery, reviewCount = 0) {
+  if (!news.length) return [...reviews]
+  if (!reviews.length) return [...news]
+
+  const step = Math.max(1, every)
+  const queue = []
+  let ni = 0
+  let ri = 0
+
+  // Every Nth rebuild, put a new card first so Know spam still unlocks unseen cards.
+  if (reviewCount % step === 0) {
+    queue.push(news[ni])
+    ni += 1
+  }
+
+  while (ri < reviews.length || ni < news.length) {
+    for (let k = 0; k < step && ri < reviews.length; k += 1) {
+      queue.push(reviews[ri])
+      ri += 1
+    }
+    if (ni < news.length) {
+      queue.push(news[ni])
+      ni += 1
+    }
+  }
+
+  return queue
+}
+
 /**
  * Build the working queue:
- * 1. Due reviews first (already seen)
- * 2. A capped set of new cards
+ * 1. Due reviews (already seen)
+ * 2. New cards interleaved — and periodically first — so a backlog can't starve them
  * 3. Force-insert "coming soon" Again cards at their remaining gap
  */
 export function buildDueQueue(deck, cards = {}, reviewCount = 0) {
   const dueNow = deck.filter((card) => isCardDue(cards[card.id], reviewCount))
-  const reviews = dueNow.filter((card) => cards[card.id])
+  const reviews = shuffleByDue(
+    dueNow.filter((card) => cards[card.id]),
+    cards,
+  )
   const news = shuffle(dueNow.filter((card) => !cards[card.id])).slice(0, SRS.newCardCap)
 
-  let queue = [...shuffleByDue(reviews, cards), ...news]
+  let queue = interleaveNewCards(reviews, news, SRS.newCardEvery, reviewCount)
 
   const comingSoon = deck.filter((card) => {
     const state = cards[card.id]

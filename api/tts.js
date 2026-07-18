@@ -2,7 +2,9 @@ import { runTtsRequest } from '../server/ttsCore.js'
 
 /**
  * Vercel serverless function — same contract as local Vite middleware:
- * POST /api/tts  { text, speed?, voiceId? } -> audio/mpeg
+ * POST /api/tts  { text, speed?, voiceId?, cacheKey?, force? }
+ *   - with cacheKey: JSON { url, voiceId, cache } after Cloudinary hit/upload
+ *   - without cacheKey: audio/mpeg
  */
 export default async function handler(req, res) {
   let body = req.body

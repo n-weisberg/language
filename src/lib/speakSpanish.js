@@ -1,11 +1,13 @@
 /** @type {HTMLAudioElement | null} */
 let activeAudio = null
 
-/** @type {Map<string, { url: string | null, promise: Promise<string> }>} */
+/** @type {Map<string, { url: string | null, promise: Promise<string>, remote?: boolean }>} */
 const audioCache = new Map()
 
 /** @type {Map<string, string>} cardId -> ElevenLabs voice id */
 const voiceLocks = new Map()
+
+const VOICE_LOCK_STORAGE_KEY = 'pimsleur-tts-voice-locks'
 
 export const VOICE_SPEEDS = [
   { id: 0.7, label: 'Slow' },
@@ -28,6 +30,33 @@ function cardIdFromCacheKey(cacheKey) {
   const at = cacheKey.lastIndexOf('@')
   return at === -1 ? cacheKey : cacheKey.slice(0, at)
 }
+
+function loadVoiceLocks() {
+  if (typeof window === 'undefined') return
+  try {
+    const raw = localStorage.getItem(VOICE_LOCK_STORAGE_KEY)
+    if (!raw) return
+    const parsed = JSON.parse(raw)
+    if (!parsed || typeof parsed !== 'object') return
+    for (const [cardId, voiceId] of Object.entries(parsed)) {
+      if (typeof voiceId === 'string' && voiceId) voiceLocks.set(cardId, voiceId)
+    }
+  } catch {
+    /* ignore */
+  }
+}
+
+function persistVoiceLocks() {
+  if (typeof window === 'undefined') return
+  try {
+    const payload = Object.fromEntries(voiceLocks.entries())
+    localStorage.setItem(VOICE_LOCK_STORAGE_KEY, JSON.stringify(payload))
+  } catch {
+    /* ignore */
+  }
+}
+
+loadVoiceLocks()
 
 function pickBrowserVoice() {
   if (typeof window === 'undefined' || !window.speechSynthesis) return null
@@ -82,9 +111,11 @@ function speakWithBrowser(text, speed = 1) {
   })
 }
 
-async function synthesizeElevenLabs(text, speed = 1, voiceId = null) {
+async function synthesizeElevenLabs(text, speed = 1, voiceId = null, cacheKey = null, force = false) {
   const payload = { text, speed: normalizeVoiceSpeed(speed) }
   if (voiceId) payload.voiceId = voiceId
+  if (cacheKey) payload.cacheKey = cacheKey
+  if (force) payload.force = true
 
   const response = await fetch('/api/tts', {
     method: 'POST',
@@ -103,12 +134,33 @@ async function synthesizeElevenLabs(text, speed = 1, voiceId = null) {
     throw new Error(detail || `TTS request failed (${response.status})`)
   }
 
+  const contentType = response.headers.get('Content-Type') || ''
+  if (contentType.includes('application/json')) {
+    const body = await response.json()
+    if (!body?.url) throw new Error('TTS returned no audio URL')
+    return {
+      url: body.url,
+      voiceId: body.voiceId || voiceId || null,
+      remote: true,
+    }
+  }
+
   const usedVoiceId = response.headers.get('X-TTS-Voice')
+  const remoteUrl = response.headers.get('X-TTS-Url')
+  if (remoteUrl) {
+    return {
+      url: remoteUrl,
+      voiceId: usedVoiceId || voiceId || null,
+      remote: true,
+    }
+  }
+
   const blob = await response.blob()
   if (!blob.size) throw new Error('TTS returned empty audio')
   return {
     url: URL.createObjectURL(blob),
     voiceId: usedVoiceId || voiceId || null,
+    remote: false,
   }
 }
 
@@ -132,20 +184,32 @@ function playUrl(url) {
   })
 }
 
-async function getOrFetchAudio(text, cacheKey, speed, cardId) {
+function dropCacheEntry(cacheKey) {
   const existing = audioCache.get(cacheKey)
-  if (existing) {
+  if (!existing) return
+  if (existing.url && !existing.remote) URL.revokeObjectURL(existing.url)
+  audioCache.delete(cacheKey)
+}
+
+async function getOrFetchAudio(text, cacheKey, speed, cardId, force = false) {
+  if (force) dropCacheEntry(cacheKey)
+
+  const existing = audioCache.get(cacheKey)
+  if (existing && !force) {
     return existing.url ?? existing.promise
   }
 
   const lockedVoiceId = cardId ? voiceLocks.get(cardId) : null
-  const promise = synthesizeElevenLabs(text, speed, lockedVoiceId)
-    .then(({ url, voiceId }) => {
-      if (cardId && voiceId) voiceLocks.set(cardId, voiceId)
+  const promise = synthesizeElevenLabs(text, speed, lockedVoiceId, cacheKey, force)
+    .then(({ url, voiceId, remote }) => {
+      if (cardId && voiceId) {
+        voiceLocks.set(cardId, voiceId)
+        persistVoiceLocks()
+      }
       const current = audioCache.get(cacheKey)
       if (current?.promise === promise) {
-        audioCache.set(cacheKey, { url, promise })
-      } else {
+        audioCache.set(cacheKey, { url, promise, remote: Boolean(remote) })
+      } else if (!remote) {
         URL.revokeObjectURL(url)
       }
       return url
@@ -157,7 +221,7 @@ async function getOrFetchAudio(text, cacheKey, speed, cardId) {
       throw error
     })
 
-  audioCache.set(cacheKey, { url: null, promise })
+  audioCache.set(cacheKey, { url: null, promise, remote: false })
   return promise
 }
 
@@ -175,21 +239,21 @@ export function prefetchSpanish(text, cacheKey, speed = 1) {
 /** Drop cached clips that are not in keepKeys (frees blob URLs). */
 export function retainSpeechCache(keepKeys = []) {
   const keep = new Set(keepKeys.filter(Boolean))
-  const keepCardIds = new Set([...keep].map(cardIdFromCacheKey).filter(Boolean))
 
   for (const [key, entry] of audioCache.entries()) {
     if (keep.has(key)) continue
-    if (entry.url) URL.revokeObjectURL(entry.url)
+    if (entry.url && !entry.remote) URL.revokeObjectURL(entry.url)
     audioCache.delete(key)
-  }
-
-  for (const cardId of [...voiceLocks.keys()]) {
-    if (!keepCardIds.has(cardId)) voiceLocks.delete(cardId)
   }
 }
 
 export function clearSpeechPrefetch() {
   retainSpeechCache([])
+}
+
+/** Drop in-memory audio for one cache key (Cloudinary file stays until force regen). */
+export function invalidateSpeechCache(cacheKey) {
+  if (cacheKey) dropCacheEntry(cacheKey)
 }
 
 export function cancelSpeech() {
@@ -204,10 +268,10 @@ export function cancelSpeech() {
 }
 
 /**
- * Speak Spanish via ElevenLabs. Reuses cached audio for the same cacheKey,
- * and reuses the card's locked voice across speeds.
+ * Speak Spanish via ElevenLabs / Cloudinary cache. Reuses cached audio for the same
+ * cacheKey, and reuses the card's locked voice across speeds.
  * @param {string} text
- * @param {{ cacheKey?: string, speed?: number }} [options]
+ * @param {{ cacheKey?: string, speed?: number, force?: boolean }} [options]
  */
 export async function speakSpanish(text, options = {}) {
   const normalized = text?.trim()
@@ -215,9 +279,10 @@ export async function speakSpanish(text, options = {}) {
   const speed = normalizeVoiceSpeed(options.speed ?? 1)
   const cacheKey = options.cacheKey ?? `${normalized}@${speed}`
   const cardId = cardIdFromCacheKey(cacheKey)
+  const force = Boolean(options.force)
 
   try {
-    const url = await getOrFetchAudio(normalized, cacheKey, speed, cardId)
+    const url = await getOrFetchAudio(normalized, cacheKey, speed, cardId, force)
     return playUrl(url)
   } catch (error) {
     console.warn('ElevenLabs TTS unavailable, falling back to browser voice:', error)

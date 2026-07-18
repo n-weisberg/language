@@ -1,0 +1,4375 @@
+{
+  "meta": {
+    "title": "Listening dialogs (Level 1)",
+    "minLevel": 1,
+    "note": "Two-speaker dialogs constrained to Pimsleur Level 1 vocab (~30s–2min). Audio via scripts/build-listening-dialogs.mjs on Cloudinary.",
+    "speakers": {
+      "a": {
+        "name": "María",
+        "role": "woman"
+      },
+      "b": {
+        "name": "Carlos",
+        "role": "man"
+      }
+    },
+    "gapMs": 280,
+    "voices": {
+      "a": {
+        "id": "EXAVITQu4vr4xnSDxMaL",
+        "name": "Sarah - Mature, Reassuring, Confident"
+      },
+      "b": {
+        "id": "CwhRBWXzGAHq8TQ4Fs17",
+        "name": "Roger - Laid-Back, Casual, Resonant"
+      }
+    }
+  },
+  "dialogs": [
+    {
+      "id": "meet-someone",
+      "title": "Meeting someone",
+      "situation": "Two people meet and introduce themselves.",
+      "audioKey": "listening:meet-someone",
+      "duration": 27.71,
+      "lines": [
+        {
+          "id": "ms-1",
+          "speaker": "a",
+          "es": "Hola. ¿Cómo está usted?",
+          "en": "Hello. How are you?",
+          "start": 0,
+          "end": 1.811
+        },
+        {
+          "id": "ms-2",
+          "speaker": "b",
+          "es": "Bien, gracias. ¿Y usted?",
+          "en": "Fine, thanks. And you?",
+          "start": 2.091,
+          "end": 3.856
+        },
+        {
+          "id": "ms-3",
+          "speaker": "a",
+          "es": "Muy bien. Me llamo María.",
+          "en": "Very well. My name is María.",
+          "start": 4.136,
+          "end": 5.808
+        },
+        {
+          "id": "ms-4",
+          "speaker": "b",
+          "es": "Encantado. Me llamo Carlos.",
+          "en": "Pleased to meet you. My name is Carlos.",
+          "start": 6.088,
+          "end": 8.271
+        },
+        {
+          "id": "ms-5",
+          "speaker": "a",
+          "es": "¿Es usted norteamericano?",
+          "en": "Are you American?",
+          "start": 8.551,
+          "end": 10.269
+        },
+        {
+          "id": "ms-6",
+          "speaker": "b",
+          "es": "Sí, soy norteamericano. ¿Y usted?",
+          "en": "Yes, I'm American. And you?",
+          "start": 10.549,
+          "end": 12.871
+        },
+        {
+          "id": "ms-7",
+          "speaker": "a",
+          "es": "Soy mexicana. Hablo español.",
+          "en": "I'm Mexican. I speak Spanish.",
+          "start": 13.151,
+          "end": 15.194
+        },
+        {
+          "id": "ms-8",
+          "speaker": "b",
+          "es": "Hablo un poco de español.",
+          "en": "I speak a little Spanish.",
+          "start": 15.474,
+          "end": 17.146
+        },
+        {
+          "id": "ms-9",
+          "speaker": "a",
+          "es": "¿Entiende usted?",
+          "en": "Do you understand?",
+          "start": 17.426,
+          "end": 19.469
+        },
+        {
+          "id": "ms-10",
+          "speaker": "b",
+          "es": "Sí, entiendo. Habla usted despacio, por favor.",
+          "en": "Yes, I understand. Please speak slowly.",
+          "start": 19.749,
+          "end": 22.489
+        },
+        {
+          "id": "ms-11",
+          "speaker": "a",
+          "es": "De acuerdo. Mucho gusto.",
+          "en": "Agreed. Nice to meet you.",
+          "start": 22.769,
+          "end": 24.952
+        },
+        {
+          "id": "ms-12",
+          "speaker": "b",
+          "es": "Mucho gusto también. Adiós.",
+          "en": "Nice to meet you too. Goodbye.",
+          "start": 25.232,
+          "end": 26.95
+        }
+      ]
+    },
+    {
+      "id": "order-drink",
+      "title": "Ordering a drink",
+      "situation": "Ordering something to drink at a cafe.",
+      "audioKey": "listening:order-drink",
+      "duration": 28.241,
+      "lines": [
+        {
+          "id": "od-1",
+          "speaker": "a",
+          "es": "Buenas tardes. ¿Qué quiere tomar?",
+          "en": "Good afternoon. What do you want to drink?",
+          "start": 0,
+          "end": 2.276
+        },
+        {
+          "id": "od-2",
+          "speaker": "b",
+          "es": "Quiero tomar algo. ¿Hay té?",
+          "en": "I want to drink something. Is there tea?",
+          "start": 2.556,
+          "end": 4.367
+        },
+        {
+          "id": "od-3",
+          "speaker": "a",
+          "es": "Sí, hay té. ¿Quiere una taza de té?",
+          "en": "Yes, there is tea. Do you want a cup of tea?",
+          "start": 4.647,
+          "end": 7.526
+        },
+        {
+          "id": "od-4",
+          "speaker": "b",
+          "es": "Sí, por favor. Y quiero un vaso de agua también.",
+          "en": "Yes, please. And I want a glass of water too.",
+          "start": 7.806,
+          "end": 10.917
+        },
+        {
+          "id": "od-5",
+          "speaker": "a",
+          "es": "¿Quiere leche con el té?",
+          "en": "Do you want milk with the tea?",
+          "start": 11.197,
+          "end": 12.683
+        },
+        {
+          "id": "od-6",
+          "speaker": "b",
+          "es": "No, gracias. Prefiero el té sólo.",
+          "en": "No, thanks. I prefer the tea alone.",
+          "start": 12.963,
+          "end": 15.099
+        },
+        {
+          "id": "od-7",
+          "speaker": "a",
+          "es": "Muy bien. ¿Quiere algo más?",
+          "en": "Very well. Do you want anything else?",
+          "start": 15.379,
+          "end": 17.422
+        },
+        {
+          "id": "od-8",
+          "speaker": "b",
+          "es": "No, nada más. ¿Cuánto cuesta?",
+          "en": "No, nothing more. How much does it cost?",
+          "start": 17.702,
+          "end": 19.513
+        },
+        {
+          "id": "od-9",
+          "speaker": "a",
+          "es": "Cuesta cinco pesos.",
+          "en": "It costs five pesos.",
+          "start": 19.793,
+          "end": 21.558
+        },
+        {
+          "id": "od-10",
+          "speaker": "b",
+          "es": "De acuerdo. Puedo pagar ahora.",
+          "en": "Agreed. I can pay now.",
+          "start": 21.838,
+          "end": 23.696
+        },
+        {
+          "id": "od-11",
+          "speaker": "a",
+          "es": "Excelente. Gracias.",
+          "en": "Excellent. Thank you.",
+          "start": 23.976,
+          "end": 25.694
+        },
+        {
+          "id": "od-12",
+          "speaker": "b",
+          "es": "Muchas gracias. Adiós.",
+          "en": "Thank you very much. Goodbye.",
+          "start": 25.974,
+          "end": 27.414
+        }
+      ]
+    },
+    {
+      "id": "ask-directions",
+      "title": "Asking directions",
+      "situation": "Finding a hotel and a restaurant nearby.",
+      "audioKey": "listening:ask-directions",
+      "duration": 30.491,
+      "lines": [
+        {
+          "id": "ad-1",
+          "speaker": "b",
+          "es": "Disculpe, señorita. ¿Dónde está el hotel?",
+          "en": "Excuse me, miss. Where is the hotel?",
+          "start": 0,
+          "end": 2.601
+        },
+        {
+          "id": "ad-2",
+          "speaker": "a",
+          "es": "El hotel está allí. ¿Lo ve?",
+          "en": "The hotel is over there. Do you see it?",
+          "start": 2.881,
+          "end": 4.739
+        },
+        {
+          "id": "ad-3",
+          "speaker": "b",
+          "es": "No, no lo veo. ¿Está cerca?",
+          "en": "No, I don't see it. Is it nearby?",
+          "start": 5.019,
+          "end": 6.83
+        },
+        {
+          "id": "ad-4",
+          "speaker": "a",
+          "es": "Sí, está cerca. Puede ir a la derecha.",
+          "en": "Yes, it's nearby. You can go to the right.",
+          "start": 7.11,
+          "end": 10.175
+        },
+        {
+          "id": "ad-5",
+          "speaker": "b",
+          "es": "A la derecha, ¿y luego?",
+          "en": "To the right, and then?",
+          "start": 10.455,
+          "end": 12.127
+        },
+        {
+          "id": "ad-6",
+          "speaker": "a",
+          "es": "Luego, puede ir derecho dos cuadras.",
+          "en": "Then you can go straight two blocks.",
+          "start": 12.407,
+          "end": 15.008
+        },
+        {
+          "id": "ad-7",
+          "speaker": "b",
+          "es": "¿Y el restaurante? ¿Está lejos?",
+          "en": "And the restaurant? Is it far?",
+          "start": 15.288,
+          "end": 17.61
+        },
+        {
+          "id": "ad-8",
+          "speaker": "a",
+          "es": "No, no está lejos. Está a la izquierda del hotel.",
+          "en": "No, it's not far. It's to the left of the hotel.",
+          "start": 17.89,
+          "end": 21.187
+        },
+        {
+          "id": "ad-9",
+          "speaker": "b",
+          "es": "¿Puedo ir ahora?",
+          "en": "Can I go now?",
+          "start": 21.467,
+          "end": 22.628
+        },
+        {
+          "id": "ad-10",
+          "speaker": "a",
+          "es": "Sí, puede ir ahora. No es tarde.",
+          "en": "Yes, you can go now. It isn't late.",
+          "start": 22.908,
+          "end": 25.323
+        },
+        {
+          "id": "ad-11",
+          "speaker": "b",
+          "es": "Muy bien. Muchas gracias.",
+          "en": "Very well. Thank you very much.",
+          "start": 25.603,
+          "end": 27.368
+        },
+        {
+          "id": "ad-12",
+          "speaker": "a",
+          "es": "De acuerdo. Adiós.",
+          "en": "Agreed. Goodbye.",
+          "start": 27.648,
+          "end": 29.691
+        }
+      ]
+    },
+    {
+      "id": "evening-plans",
+      "title": "Evening plans",
+      "situation": "Friends decide what to do this evening.",
+      "audioKey": "listening:evening-plans",
+      "duration": 30.836,
+      "lines": [
+        {
+          "id": "ep-1",
+          "speaker": "a",
+          "es": "Hola, Carlos. ¿Qué quiere hacer esta noche?",
+          "en": "Hi, Carlos. What do you want to do tonight?",
+          "start": 0,
+          "end": 2.647
+        },
+        {
+          "id": "ep-2",
+          "speaker": "b",
+          "es": "No sé. ¿Quiere ir al cine?",
+          "en": "I don't know. Do you want to go to the movies?",
+          "start": 2.927,
+          "end": 4.692
+        },
+        {
+          "id": "ep-3",
+          "speaker": "a",
+          "es": "Sí, me gusta. ¿Hay una película buena?",
+          "en": "Yes, I like that. Is there a good movie?",
+          "start": 4.972,
+          "end": 7.48
+        },
+        {
+          "id": "ep-4",
+          "speaker": "b",
+          "es": "Sí. ¿O prefiere ir al teatro?",
+          "en": "Yes. Or do you prefer to go to the theater?",
+          "start": 7.76,
+          "end": 9.943
+        },
+        {
+          "id": "ep-5",
+          "speaker": "a",
+          "es": "Prefiero el cine. ¿Vamos juntos?",
+          "en": "I prefer the movies. Shall we go together?",
+          "start": 10.223,
+          "end": 12.917
+        },
+        {
+          "id": "ep-6",
+          "speaker": "b",
+          "es": "Sí, vamos. ¿A qué hora?",
+          "en": "Yes, let's go. At what time?",
+          "start": 13.197,
+          "end": 14.637
+        },
+        {
+          "id": "ep-7",
+          "speaker": "a",
+          "es": "A las ocho. ¿Es temprano?",
+          "en": "At eight. Is that early?",
+          "start": 14.917,
+          "end": 16.914
+        },
+        {
+          "id": "ep-8",
+          "speaker": "b",
+          "es": "No, está bien. ¿Quiere comer algo ahora?",
+          "en": "No, that's fine. Do you want to eat something now?",
+          "start": 17.194,
+          "end": 19.655
+        },
+        {
+          "id": "ep-9",
+          "speaker": "a",
+          "es": "Sí. Quiero comer en un restaurante cerca.",
+          "en": "Yes. I want to eat at a nearby restaurant.",
+          "start": 19.935,
+          "end": 22.629
+        },
+        {
+          "id": "ep-10",
+          "speaker": "b",
+          "es": "De acuerdo. Nos vemos a las siete.",
+          "en": "Agreed. See you at seven.",
+          "start": 22.909,
+          "end": 25.51
+        },
+        {
+          "id": "ep-11",
+          "speaker": "a",
+          "es": "Excelente. Hasta luego.",
+          "en": "Excellent. See you later.",
+          "start": 25.79,
+          "end": 27.74
+        },
+        {
+          "id": "ep-12",
+          "speaker": "b",
+          "es": "Hasta luego. Adiós.",
+          "en": "See you later. Goodbye.",
+          "start": 28.02,
+          "end": 30.017
+        }
+      ]
+    },
+    {
+      "id": "shopping",
+      "title": "Shopping",
+      "situation": "Buying a few things and asking prices.",
+      "audioKey": "listening:shopping",
+      "duration": 32.023,
+      "lines": [
+        {
+          "id": "sh-1",
+          "speaker": "b",
+          "es": "Buenos días. Quiero comprar algo.",
+          "en": "Good morning. I want to buy something.",
+          "start": 0,
+          "end": 2.136
+        },
+        {
+          "id": "sh-2",
+          "speaker": "a",
+          "es": "Buenos días. ¿Qué quiere comprar?",
+          "en": "Good morning. What do you want to buy?",
+          "start": 2.416,
+          "end": 5.853
+        },
+        {
+          "id": "sh-3",
+          "speaker": "b",
+          "es": "Quiero comprar algo. ¿Hay una panadería cerca?",
+          "en": "I want to buy something. Is there a bakery nearby?",
+          "start": 6.133,
+          "end": 9.105
+        },
+        {
+          "id": "sh-4",
+          "speaker": "a",
+          "es": "Sí, está aquí. ¿Quiere algo más?",
+          "en": "Yes, it's here. Do you want anything else?",
+          "start": 9.385,
+          "end": 12.171
+        },
+        {
+          "id": "sh-5",
+          "speaker": "b",
+          "es": "Sí. Quiero comprar un refresco también.",
+          "en": "Yes. I want to buy a soda too.",
+          "start": 12.451,
+          "end": 15.33
+        },
+        {
+          "id": "sh-6",
+          "speaker": "a",
+          "es": "Muy bien. ¿Cuántos refrescos quiere?",
+          "en": "Very well. How many sodas do you want?",
+          "start": 15.61,
+          "end": 17.886
+        },
+        {
+          "id": "sh-7",
+          "speaker": "b",
+          "es": "Dos, por favor. ¿Cuánto cuestan?",
+          "en": "Two, please. How much do they cost?",
+          "start": 18.166,
+          "end": 20.302
+        },
+        {
+          "id": "sh-8",
+          "speaker": "a",
+          "es": "Cuestan veinte pesos.",
+          "en": "They cost twenty pesos.",
+          "start": 20.582,
+          "end": 22.254
+        },
+        {
+          "id": "sh-9",
+          "speaker": "b",
+          "es": "Veinte pesos. ¿Puedo pagar ahora?",
+          "en": "Twenty pesos. Can I pay now?",
+          "start": 22.534,
+          "end": 24.995
+        },
+        {
+          "id": "sh-10",
+          "speaker": "a",
+          "es": "Sí, puede pagar aquí.",
+          "en": "Yes, you can pay here.",
+          "start": 25.275,
+          "end": 26.9
+        },
+        {
+          "id": "sh-11",
+          "speaker": "b",
+          "es": "Excelente. Muchas gracias.",
+          "en": "Excellent. Thank you very much.",
+          "start": 27.18,
+          "end": 29.038
+        },
+        {
+          "id": "sh-12",
+          "speaker": "a",
+          "es": "De acuerdo. Adiós.",
+          "en": "Agreed. Goodbye.",
+          "start": 29.318,
+          "end": 31.222
+        }
+      ]
+    },
+    {
+      "id": "phone-call",
+      "title": "A phone call",
+      "situation": "Calling a friend to see how they are.",
+      "audioKey": "listening:phone-call",
+      "duration": 29.562,
+      "lines": [
+        {
+          "id": "pc-1",
+          "speaker": "a",
+          "es": "¿Hola? ¿Carlos?",
+          "en": "Hello? Carlos?",
+          "start": 0,
+          "end": 1.207
+        },
+        {
+          "id": "pc-2",
+          "speaker": "b",
+          "es": "Sí, soy Carlos. ¿Quién es?",
+          "en": "Yes, I'm Carlos. Who is it?",
+          "start": 1.487,
+          "end": 3.159
+        },
+        {
+          "id": "pc-3",
+          "speaker": "a",
+          "es": "Soy María. ¿Cómo está usted?",
+          "en": "I'm María. How are you?",
+          "start": 3.439,
+          "end": 5.343
+        },
+        {
+          "id": "pc-4",
+          "speaker": "b",
+          "es": "Bien, gracias. ¿Y usted?",
+          "en": "Fine, thanks. And you?",
+          "start": 5.623,
+          "end": 7.388
+        },
+        {
+          "id": "pc-5",
+          "speaker": "a",
+          "es": "Muy bien. ¿Puede hablar ahora?",
+          "en": "Very well. Can you talk now?",
+          "start": 7.668,
+          "end": 10.083
+        },
+        {
+          "id": "pc-6",
+          "speaker": "b",
+          "es": "Sí, puedo. Un momento, por favor.",
+          "en": "Yes, I can. One moment, please.",
+          "start": 10.363,
+          "end": 12.639
+        },
+        {
+          "id": "pc-7",
+          "speaker": "a",
+          "es": "De acuerdo. ¿Quiere hablar más tarde?",
+          "en": "Agreed. Do you want to talk later?",
+          "start": 12.919,
+          "end": 15.52
+        },
+        {
+          "id": "pc-8",
+          "speaker": "b",
+          "es": "No, está bien. Podemos hablar ahora.",
+          "en": "No, it's fine. We can talk now.",
+          "start": 15.8,
+          "end": 18.261
+        },
+        {
+          "id": "pc-9",
+          "speaker": "a",
+          "es": "Excelente. ¿Qué quiere hacer hoy?",
+          "en": "Excellent. What do you want to do today?",
+          "start": 18.541,
+          "end": 20.817
+        },
+        {
+          "id": "pc-10",
+          "speaker": "b",
+          "es": "No sé. ¿Quiere venir a mi casa?",
+          "en": "I don't know. Do you want to come to my house?",
+          "start": 21.097,
+          "end": 23.233
+        },
+        {
+          "id": "pc-11",
+          "speaker": "a",
+          "es": "Sí, me gusta. Nos vemos más tarde.",
+          "en": "Yes, I like that. See you later.",
+          "start": 23.513,
+          "end": 26.114
+        },
+        {
+          "id": "pc-12",
+          "speaker": "b",
+          "es": "De acuerdo. Hasta luego. Adiós.",
+          "en": "Agreed. See you later. Goodbye.",
+          "start": 26.394,
+          "end": 28.762
+        }
+      ]
+    },
+    {
+      "id": "at-hotel",
+      "title": "At the hotel",
+      "situation": "Checking in and asking about the room.",
+      "audioKey": "listening:at-hotel",
+      "duration": 33.173,
+      "lines": [
+        {
+          "id": "ah-1",
+          "speaker": "b",
+          "es": "Buenas tardes. Quiero un hotel.",
+          "en": "Good afternoon. I want a hotel.",
+          "start": 0,
+          "end": 2.183
+        },
+        {
+          "id": "ah-2",
+          "speaker": "a",
+          "es": "Buenas tardes. ¿Quiere estar aquí?",
+          "en": "Good afternoon. Do you want to stay here?",
+          "start": 2.463,
+          "end": 5.296
+        },
+        {
+          "id": "ah-3",
+          "speaker": "b",
+          "es": "Sí, por favor. ¿Hay un lugar aquí?",
+          "en": "Yes, please. Is there a place here?",
+          "start": 5.576,
+          "end": 7.666
+        },
+        {
+          "id": "ah-4",
+          "speaker": "a",
+          "es": "Sí, hay. ¿Por cuánto tiempo?",
+          "en": "Yes, there is. For how long?",
+          "start": 7.946,
+          "end": 10.454
+        },
+        {
+          "id": "ah-5",
+          "speaker": "b",
+          "es": "Por una semana. ¿Cuánto cuesta?",
+          "en": "For one week. How much does it cost?",
+          "start": 10.734,
+          "end": 12.963
+        },
+        {
+          "id": "ah-6",
+          "speaker": "a",
+          "es": "Cuesta cien pesos por día.",
+          "en": "It costs one hundred pesos per day.",
+          "start": 13.243,
+          "end": 15.008
+        },
+        {
+          "id": "ah-7",
+          "speaker": "b",
+          "es": "Cien pesos. ¿Puedo pagar ahora?",
+          "en": "One hundred pesos. Can I pay now?",
+          "start": 15.288,
+          "end": 17.564
+        },
+        {
+          "id": "ah-8",
+          "speaker": "a",
+          "es": "Sí, puede pagar aquí.",
+          "en": "Yes, you can pay here.",
+          "start": 17.844,
+          "end": 19.377
+        },
+        {
+          "id": "ah-9",
+          "speaker": "b",
+          "es": "Muy bien. ¿Dónde está mi lugar?",
+          "en": "Very well. Where is my place?",
+          "start": 19.657,
+          "end": 21.886
+        },
+        {
+          "id": "ah-10",
+          "speaker": "a",
+          "es": "Está a la derecha. Puede ir allí ahora.",
+          "en": "It's to the right. You can go there now.",
+          "start": 22.166,
+          "end": 24.813
+        },
+        {
+          "id": "ah-11",
+          "speaker": "b",
+          "es": "¿Hay un baño?",
+          "en": "Is there a bathroom?",
+          "start": 25.093,
+          "end": 26.254
+        },
+        {
+          "id": "ah-12",
+          "speaker": "a",
+          "es": "Sí, el baño está cerca.",
+          "en": "Yes, the bathroom is nearby.",
+          "start": 26.534,
+          "end": 28.531
+        },
+        {
+          "id": "ah-13",
+          "speaker": "b",
+          "es": "Excelente. Muchas gracias.",
+          "en": "Excellent. Thank you very much.",
+          "start": 28.811,
+          "end": 30.483
+        },
+        {
+          "id": "ah-14",
+          "speaker": "a",
+          "es": "De nada. Adiós.",
+          "en": "You're welcome. Goodbye.",
+          "start": 30.763,
+          "end": 32.249
+        }
+      ]
+    },
+    {
+      "id": "what-time",
+      "title": "What time is it?",
+      "situation": "Asking the time and making plans.",
+      "audioKey": "listening:what-time",
+      "duration": 33.593,
+      "lines": [
+        {
+          "id": "wt-1",
+          "speaker": "a",
+          "es": "Disculpe. ¿Qué hora es?",
+          "en": "Excuse me. What time is it?",
+          "start": 0,
+          "end": 2.043
+        },
+        {
+          "id": "wt-2",
+          "speaker": "b",
+          "es": "Son las tres de la tarde.",
+          "en": "It's three in the afternoon.",
+          "start": 2.323,
+          "end": 3.902
+        },
+        {
+          "id": "wt-3",
+          "speaker": "a",
+          "es": "¿Las tres? ¿Es tarde?",
+          "en": "Three? Is it late?",
+          "start": 4.182,
+          "end": 5.993
+        },
+        {
+          "id": "wt-4",
+          "speaker": "b",
+          "es": "No, no es tarde. ¿Por qué?",
+          "en": "No, it isn't late. Why?",
+          "start": 6.273,
+          "end": 7.945
+        },
+        {
+          "id": "wt-5",
+          "speaker": "a",
+          "es": "Quiero ir al cine. ¿A qué hora?",
+          "en": "I want to go to the movies. At what time?",
+          "start": 8.225,
+          "end": 10.872
+        },
+        {
+          "id": "wt-6",
+          "speaker": "b",
+          "es": "A las ocho. ¿Es temprano?",
+          "en": "At eight. Is that early?",
+          "start": 11.152,
+          "end": 13.01
+        },
+        {
+          "id": "wt-7",
+          "speaker": "a",
+          "es": "No, está bien. ¿Quiere ir conmigo?",
+          "en": "No, that's fine. Do you want to go with me?",
+          "start": 13.29,
+          "end": 15.798
+        },
+        {
+          "id": "wt-8",
+          "speaker": "b",
+          "es": "Sí. ¿Vamos juntos?",
+          "en": "Yes. Shall we go together?",
+          "start": 16.078,
+          "end": 17.703
+        },
+        {
+          "id": "wt-9",
+          "speaker": "a",
+          "es": "Sí, vamos. ¿Quiere comer algo ahora?",
+          "en": "Yes, let's go. Do you want to eat something now?",
+          "start": 17.983,
+          "end": 20.351
+        },
+        {
+          "id": "wt-10",
+          "speaker": "b",
+          "es": "Sí. Quiero tomar un té.",
+          "en": "Yes. I want to drink some tea.",
+          "start": 20.631,
+          "end": 22.117
+        },
+        {
+          "id": "wt-11",
+          "speaker": "a",
+          "es": "De acuerdo. Hay un restaurante cerca.",
+          "en": "Agreed. There's a restaurant nearby.",
+          "start": 22.397,
+          "end": 25.23
+        },
+        {
+          "id": "wt-12",
+          "speaker": "b",
+          "es": "¿Está lejos?",
+          "en": "Is it far?",
+          "start": 25.51,
+          "end": 26.625
+        },
+        {
+          "id": "wt-13",
+          "speaker": "a",
+          "es": "No, está aquí. Podemos ir ahora.",
+          "en": "No, it's here. We can go now.",
+          "start": 26.905,
+          "end": 29.32
+        },
+        {
+          "id": "wt-14",
+          "speaker": "b",
+          "es": "Excelente. Vamos.",
+          "en": "Excellent. Let's go.",
+          "start": 29.6,
+          "end": 31.04
+        },
+        {
+          "id": "wt-15",
+          "speaker": "a",
+          "es": "Hasta luego.",
+          "en": "See you later.",
+          "start": 31.32,
+          "end": 32.574
+        }
+      ]
+    },
+    {
+      "id": "feeling-sick",
+      "title": "Feeling sick",
+      "situation": "A friend is sick and needs help.",
+      "audioKey": "listening:feeling-sick",
+      "duration": 40.542,
+      "lines": [
+        {
+          "id": "fs-1",
+          "speaker": "a",
+          "es": "Hola, Carlos. ¿Cómo está usted?",
+          "en": "Hi, Carlos. How are you?",
+          "start": 0,
+          "end": 2.136
+        },
+        {
+          "id": "fs-2",
+          "speaker": "b",
+          "es": "No estoy bien. Estoy enfermo.",
+          "en": "I'm not well. I'm sick.",
+          "start": 2.416,
+          "end": 4.552
+        },
+        {
+          "id": "fs-3",
+          "speaker": "a",
+          "es": "¿Está enfermo? ¿Qué necesita?",
+          "en": "You're sick? What do you need?",
+          "start": 4.832,
+          "end": 6.968
+        },
+        {
+          "id": "fs-4",
+          "speaker": "b",
+          "es": "Necesito un médico. ¿Puede ayudarme?",
+          "en": "I need a doctor. Can you help me?",
+          "start": 7.248,
+          "end": 9.756
+        },
+        {
+          "id": "fs-5",
+          "speaker": "a",
+          "es": "Sí, puedo ayudarle. ¿Quiere ir ahora?",
+          "en": "Yes, I can help you. Do you want to go now?",
+          "start": 10.036,
+          "end": 12.59
+        },
+        {
+          "id": "fs-6",
+          "speaker": "b",
+          "es": "Sí, por favor. ¿Dónde está el médico?",
+          "en": "Yes, please. Where is the doctor?",
+          "start": 12.87,
+          "end": 15.564
+        },
+        {
+          "id": "fs-7",
+          "speaker": "a",
+          "es": "Está cerca. Podemos ir a la derecha.",
+          "en": "It's nearby. We can go to the right.",
+          "start": 15.844,
+          "end": 18.538
+        },
+        {
+          "id": "fs-8",
+          "speaker": "b",
+          "es": "¿Está lejos?",
+          "en": "Is it far?",
+          "start": 18.818,
+          "end": 19.84
+        },
+        {
+          "id": "fs-9",
+          "speaker": "a",
+          "es": "No, no está lejos. Dos cuadras.",
+          "en": "No, it isn't far. Two blocks.",
+          "start": 20.12,
+          "end": 22.21
+        },
+        {
+          "id": "fs-10",
+          "speaker": "b",
+          "es": "Muy bien. ¿Puedo tomar algo?",
+          "en": "Very well. Can I drink something?",
+          "start": 22.49,
+          "end": 24.348
+        },
+        {
+          "id": "fs-11",
+          "speaker": "a",
+          "es": "Sí. ¿Quiere un vaso de agua?",
+          "en": "Yes. Do you want a glass of water?",
+          "start": 24.628,
+          "end": 27.089
+        },
+        {
+          "id": "fs-12",
+          "speaker": "b",
+          "es": "Sí, quiero agua. Gracias.",
+          "en": "Yes, I want water. Thanks.",
+          "start": 27.369,
+          "end": 28.994
+        },
+        {
+          "id": "fs-13",
+          "speaker": "a",
+          "es": "De acuerdo. Vamos juntos.",
+          "en": "Agreed. Let's go together.",
+          "start": 29.274,
+          "end": 31.503
+        },
+        {
+          "id": "fs-14",
+          "speaker": "b",
+          "es": "Muchas gracias. Usted es una buena persona.",
+          "en": "Thank you very much. You are a good person.",
+          "start": 31.783,
+          "end": 34.384
+        },
+        {
+          "id": "fs-15",
+          "speaker": "a",
+          "es": "No es nada. Vamos.",
+          "en": "It's nothing. Let's go.",
+          "start": 34.664,
+          "end": 36.661
+        },
+        {
+          "id": "fs-16",
+          "speaker": "b",
+          "es": "De acuerdo. Adiós… no, vamos.",
+          "en": "Agreed. Goodbye… no, let's go.",
+          "start": 36.941,
+          "end": 39.449
+        }
+      ]
+    },
+    {
+      "id": "taxi-ride",
+      "title": "Taking a taxi",
+      "situation": "Getting a taxi to a restaurant.",
+      "audioKey": "listening:taxi-ride",
+      "duration": 46.045,
+      "lines": [
+        {
+          "id": "tr-1",
+          "speaker": "b",
+          "es": "Disculpe. ¿Puede ayudarme?",
+          "en": "Excuse me. Can you help me?",
+          "start": 0,
+          "end": 1.858
+        },
+        {
+          "id": "tr-2",
+          "speaker": "a",
+          "es": "Sí. ¿Qué quiere?",
+          "en": "Yes. What do you want?",
+          "start": 2.138,
+          "end": 3.438
+        },
+        {
+          "id": "tr-3",
+          "speaker": "b",
+          "es": "Quiero ir al restaurante. ¿Puedo ir con usted?",
+          "en": "I want to go to the restaurant. Can I go with you?",
+          "start": 3.718,
+          "end": 6.597
+        },
+        {
+          "id": "tr-4",
+          "speaker": "a",
+          "es": "Sí. ¿Dónde está el restaurante?",
+          "en": "Yes. Where is the restaurant?",
+          "start": 6.877,
+          "end": 8.92
+        },
+        {
+          "id": "tr-5",
+          "speaker": "b",
+          "es": "Está en esa avenida. ¿Lo conoce?",
+          "en": "It's on that avenue. Do you know it?",
+          "start": 9.2,
+          "end": 11.568
+        },
+        {
+          "id": "tr-6",
+          "speaker": "a",
+          "es": "Sí, lo conozco. Está lejos, ¿verdad?",
+          "en": "Yes, I know it. It's far, right?",
+          "start": 11.848,
+          "end": 14.216
+        },
+        {
+          "id": "tr-7",
+          "speaker": "b",
+          "es": "Sí, está lejos. ¿Cuánto cuesta?",
+          "en": "Yes, it's far. How much does it cost?",
+          "start": 14.496,
+          "end": 16.632
+        },
+        {
+          "id": "tr-8",
+          "speaker": "a",
+          "es": "Cuesta cincuenta pesos.",
+          "en": "It costs fifty pesos.",
+          "start": 16.912,
+          "end": 18.584
+        },
+        {
+          "id": "tr-9",
+          "speaker": "b",
+          "es": "De acuerdo. Podemos ir ahora.",
+          "en": "Agreed. We can go now.",
+          "start": 18.864,
+          "end": 21.047
+        },
+        {
+          "id": "tr-10",
+          "speaker": "a",
+          "es": "Sí. Vamos. ¿Quiere ir derecho?",
+          "en": "Yes. Let's go. Do you want to go straight?",
+          "start": 21.327,
+          "end": 23.974
+        },
+        {
+          "id": "tr-11",
+          "speaker": "b",
+          "es": "Sí, derecho. Luego a la izquierda.",
+          "en": "Yes, straight. Then to the left.",
+          "start": 24.254,
+          "end": 26.622
+        },
+        {
+          "id": "tr-12",
+          "speaker": "a",
+          "es": "A la izquierda. ¿Y luego?",
+          "en": "To the left. And then?",
+          "start": 26.902,
+          "end": 28.806
+        },
+        {
+          "id": "tr-13",
+          "speaker": "b",
+          "es": "Luego, tres cuadras. El restaurante está allí.",
+          "en": "Then, three blocks. The restaurant is there.",
+          "start": 29.086,
+          "end": 31.965
+        },
+        {
+          "id": "tr-14",
+          "speaker": "a",
+          "es": "Muy bien. ¿Quiere pagar ahora o más tarde?",
+          "en": "Very well. Do you want to pay now or later?",
+          "start": 32.245,
+          "end": 34.985
+        },
+        {
+          "id": "tr-15",
+          "speaker": "b",
+          "es": "Puedo pagar ahora. Aquí tiene.",
+          "en": "I can pay now. Here you go.",
+          "start": 35.265,
+          "end": 37.633
+        },
+        {
+          "id": "tr-16",
+          "speaker": "a",
+          "es": "Gracias. Estamos aquí.",
+          "en": "Thank you. We're here.",
+          "start": 37.913,
+          "end": 39.631
+        },
+        {
+          "id": "tr-17",
+          "speaker": "b",
+          "es": "Excelente. Muchas gracias. Adiós.",
+          "en": "Excellent. Thank you very much. Goodbye.",
+          "start": 39.911,
+          "end": 42.605
+        },
+        {
+          "id": "tr-18",
+          "speaker": "a",
+          "es": "De nada. Adiós.",
+          "en": "You're welcome. Goodbye.",
+          "start": 42.885,
+          "end": 44.835
+        }
+      ]
+    },
+    {
+      "id": "restaurant-meal",
+      "title": "At a restaurant",
+      "situation": "Ordering food and drinks for lunch.",
+      "audioKey": "listening:restaurant-meal",
+      "duration": 56.204,
+      "lines": [
+        {
+          "id": "rm-1",
+          "speaker": "a",
+          "es": "Buenas tardes. ¿Qué quiere comer?",
+          "en": "Good afternoon. What do you want to eat?",
+          "start": 0,
+          "end": 5.294
+        },
+        {
+          "id": "rm-2",
+          "speaker": "b",
+          "es": "Quiero comer algo. ¿Qué hay?",
+          "en": "I want to eat something. What is there?",
+          "start": 5.574,
+          "end": 7.432
+        },
+        {
+          "id": "rm-3",
+          "speaker": "a",
+          "es": "Hay mole. ¿Le gusta el mole?",
+          "en": "There is mole. Do you like mole?",
+          "start": 7.712,
+          "end": 9.941
+        },
+        {
+          "id": "rm-4",
+          "speaker": "b",
+          "es": "Sí, me gusta. Quiero mole, por favor.",
+          "en": "Yes, I like it. I want mole, please.",
+          "start": 10.221,
+          "end": 12.589
+        },
+        {
+          "id": "rm-5",
+          "speaker": "a",
+          "es": "Muy bien. ¿Quiere tomar algo?",
+          "en": "Very well. Do you want to drink something?",
+          "start": 12.869,
+          "end": 15.052
+        },
+        {
+          "id": "rm-6",
+          "speaker": "b",
+          "es": "Sí. Quiero una cerveza. ¿Hay cerveza?",
+          "en": "Yes. I want a beer. Is there beer?",
+          "start": 15.332,
+          "end": 17.933
+        },
+        {
+          "id": "rm-7",
+          "speaker": "a",
+          "es": "Sí, hay. ¿Quiere una cerveza grande?",
+          "en": "Yes, there is. Do you want a large beer?",
+          "start": 18.213,
+          "end": 20.999
+        },
+        {
+          "id": "rm-8",
+          "speaker": "b",
+          "es": "No, pequeña, por favor. Y un vaso de agua.",
+          "en": "No, small, please. And a glass of water.",
+          "start": 21.279,
+          "end": 24.112
+        },
+        {
+          "id": "rm-9",
+          "speaker": "a",
+          "es": "De acuerdo. ¿Quiere algo más?",
+          "en": "Agreed. Do you want anything else?",
+          "start": 24.392,
+          "end": 26.621
+        },
+        {
+          "id": "rm-10",
+          "speaker": "b",
+          "es": "No, nada más. ¿Cuánto cuesta?",
+          "en": "No, nothing more. How much does it cost?",
+          "start": 26.901,
+          "end": 28.805
+        },
+        {
+          "id": "rm-11",
+          "speaker": "a",
+          "es": "Cuesta cuarenta pesos.",
+          "en": "It costs forty pesos.",
+          "start": 29.085,
+          "end": 30.757
+        },
+        {
+          "id": "rm-12",
+          "speaker": "b",
+          "es": "Está bien. Puedo pagar después.",
+          "en": "That's fine. I can pay afterward.",
+          "start": 31.037,
+          "end": 33.452
+        },
+        {
+          "id": "rm-13",
+          "speaker": "a",
+          "es": "Sí. ¿Quiere comer ahora?",
+          "en": "Yes. Do you want to eat now?",
+          "start": 33.732,
+          "end": 36.008
+        },
+        {
+          "id": "rm-14",
+          "speaker": "b",
+          "es": "Sí. Quiero comer. ¿Puedo comer aquí?",
+          "en": "Yes. I want to eat. Can I eat here?",
+          "start": 36.288,
+          "end": 39.074
+        },
+        {
+          "id": "rm-15",
+          "speaker": "a",
+          "es": "Cómo no. Puede comer aquí.",
+          "en": "Of course. You can eat here.",
+          "start": 39.354,
+          "end": 41.351
+        },
+        {
+          "id": "rm-16",
+          "speaker": "b",
+          "es": "Excelente. Muchas gracias.",
+          "en": "Excellent. Thank you very much.",
+          "start": 41.631,
+          "end": 43.396
+        },
+        {
+          "id": "rm-17",
+          "speaker": "a",
+          "es": "De nada. ¿Quiere hablar un poco?",
+          "en": "You're welcome. Do you want to talk a little?",
+          "start": 43.676,
+          "end": 46.509
+        },
+        {
+          "id": "rm-18",
+          "speaker": "b",
+          "es": "Sí. Hablo un poco de español.",
+          "en": "Yes. I speak a little Spanish.",
+          "start": 46.789,
+          "end": 48.972
+        },
+        {
+          "id": "rm-19",
+          "speaker": "a",
+          "es": "Muy bien. Habla usted despacio, y yo entiendo.",
+          "en": "Very well. Speak slowly, and I understand.",
+          "start": 49.252,
+          "end": 52.781
+        },
+        {
+          "id": "rm-20",
+          "speaker": "b",
+          "es": "De acuerdo. Gracias.",
+          "en": "Agreed. Thank you.",
+          "start": 53.061,
+          "end": 54.826
+        }
+      ]
+    },
+    {
+      "id": "family-talk",
+      "title": "Talking about family",
+      "situation": "Friends talk about parents and home.",
+      "audioKey": "listening:family-talk",
+      "duration": 51.04,
+      "lines": [
+        {
+          "id": "ft-1",
+          "speaker": "a",
+          "es": "Carlos, ¿dónde vive usted?",
+          "en": "Carlos, where do you live?",
+          "start": 0,
+          "end": 1.904
+        },
+        {
+          "id": "ft-2",
+          "speaker": "b",
+          "es": "Vivo aquí. ¿Y usted?",
+          "en": "I live here. And you?",
+          "start": 2.184,
+          "end": 3.763
+        },
+        {
+          "id": "ft-3",
+          "speaker": "a",
+          "es": "Vivo cerca. ¿Vive con su familia?",
+          "en": "I live nearby. Do you live with your family?",
+          "start": 4.043,
+          "end": 7.062
+        },
+        {
+          "id": "ft-4",
+          "speaker": "b",
+          "es": "Sí. Vivo con mi padre y mi madre.",
+          "en": "Yes. I live with my father and my mother.",
+          "start": 7.342,
+          "end": 9.896
+        },
+        {
+          "id": "ft-5",
+          "speaker": "a",
+          "es": "¿Cómo está su madre?",
+          "en": "How is your mother?",
+          "start": 10.176,
+          "end": 11.709
+        },
+        {
+          "id": "ft-6",
+          "speaker": "b",
+          "es": "Está bien. ¿Y su padre?",
+          "en": "She's well. And your father?",
+          "start": 11.989,
+          "end": 13.661
+        },
+        {
+          "id": "ft-7",
+          "speaker": "a",
+          "es": "Mi padre está bien también. ¿Tiene amigos aquí?",
+          "en": "My father is well too. Do you have friends here?",
+          "start": 13.941,
+          "end": 17.47
+        },
+        {
+          "id": "ft-8",
+          "speaker": "b",
+          "es": "Sí. Tengo un amigo. ¿Y usted?",
+          "en": "Yes. I have a friend. And you?",
+          "start": 17.75,
+          "end": 19.747
+        },
+        {
+          "id": "ft-9",
+          "speaker": "a",
+          "es": "Tengo una amiga. Vive en los Estados Unidos.",
+          "en": "I have a friend. She lives in the United States.",
+          "start": 20.027,
+          "end": 23.417
+        },
+        {
+          "id": "ft-10",
+          "speaker": "b",
+          "es": "¿Habla inglés?",
+          "en": "Does she speak English?",
+          "start": 23.697,
+          "end": 24.858
+        },
+        {
+          "id": "ft-11",
+          "speaker": "a",
+          "es": "Sí, habla inglés y español.",
+          "en": "Yes, she speaks English and Spanish.",
+          "start": 25.138,
+          "end": 27.135
+        },
+        {
+          "id": "ft-12",
+          "speaker": "b",
+          "es": "Excelente. Yo hablo un poco de inglés.",
+          "en": "Excellent. I speak a little English.",
+          "start": 27.415,
+          "end": 29.876
+        },
+        {
+          "id": "ft-13",
+          "speaker": "a",
+          "es": "¿Quiere aprender más?",
+          "en": "Do you want to learn more?",
+          "start": 30.156,
+          "end": 31.596
+        },
+        {
+          "id": "ft-14",
+          "speaker": "b",
+          "es": "Sí. Quiero estudiar. ¿Puede ayudarme?",
+          "en": "Yes. I want to study. Can you help me?",
+          "start": 31.876,
+          "end": 34.477
+        },
+        {
+          "id": "ft-15",
+          "speaker": "a",
+          "es": "Sí, puedo. Podemos hablar juntos.",
+          "en": "Yes, I can. We can talk together.",
+          "start": 34.757,
+          "end": 36.94
+        },
+        {
+          "id": "ft-16",
+          "speaker": "b",
+          "es": "¿Cuándo? ¿Hoy?",
+          "en": "When? Today?",
+          "start": 37.22,
+          "end": 38.706
+        },
+        {
+          "id": "ft-17",
+          "speaker": "a",
+          "es": "Hoy no. Mañana. ¿A qué hora?",
+          "en": "Not today. Tomorrow. At what time?",
+          "start": 38.986,
+          "end": 41.772
+        },
+        {
+          "id": "ft-18",
+          "speaker": "b",
+          "es": "A las diez. ¿Es temprano?",
+          "en": "At ten. Is that early?",
+          "start": 42.052,
+          "end": 43.91
+        },
+        {
+          "id": "ft-19",
+          "speaker": "a",
+          "es": "No, está bien. Nos vemos mañana.",
+          "en": "No, that's fine. See you tomorrow.",
+          "start": 44.19,
+          "end": 46.651
+        },
+        {
+          "id": "ft-20",
+          "speaker": "b",
+          "es": "De acuerdo. Hasta mañana. Adiós.",
+          "en": "Agreed. See you tomorrow. Goodbye.",
+          "start": 46.931,
+          "end": 49.671
+        }
+      ]
+    },
+    {
+      "id": "learning-spanish",
+      "title": "Learning Spanish",
+      "situation": "Practicing Spanish and asking what words mean.",
+      "audioKey": "listening:learning-spanish",
+      "duration": 56.134,
+      "lines": [
+        {
+          "id": "ls-1",
+          "speaker": "b",
+          "es": "María, quiero aprender español.",
+          "en": "María, I want to learn Spanish.",
+          "start": 0,
+          "end": 2.136
+        },
+        {
+          "id": "ls-2",
+          "speaker": "a",
+          "es": "Muy bien. ¿Habla usted español?",
+          "en": "Very well. Do you speak Spanish?",
+          "start": 2.416,
+          "end": 4.97
+        },
+        {
+          "id": "ls-3",
+          "speaker": "b",
+          "es": "Hablo un poco. No entiendo mucho.",
+          "en": "I speak a little. I don't understand much.",
+          "start": 5.25,
+          "end": 7.665
+        },
+        {
+          "id": "ls-4",
+          "speaker": "a",
+          "es": "De acuerdo. Hablo despacio. ¿Entiende?",
+          "en": "Agreed. I'll speak slowly. Do you understand?",
+          "start": 7.945,
+          "end": 10.917
+        },
+        {
+          "id": "ls-5",
+          "speaker": "b",
+          "es": "Sí, entiendo. ¿Qué significa esa palabra?",
+          "en": "Yes, I understand. What does that word mean?",
+          "start": 11.197,
+          "end": 13.891
+        },
+        {
+          "id": "ls-6",
+          "speaker": "a",
+          "es": "¿Cuál? ¿Esta?",
+          "en": "Which one? This one?",
+          "start": 14.171,
+          "end": 15.657
+        },
+        {
+          "id": "ls-7",
+          "speaker": "b",
+          "es": "Sí, esa. ¿Qué significa?",
+          "en": "Yes, that one. What does it mean?",
+          "start": 15.937,
+          "end": 17.841
+        },
+        {
+          "id": "ls-8",
+          "speaker": "a",
+          "es": "Significa «amigo». ¿Lo sabe?",
+          "en": "It means “friend.” Do you know it?",
+          "start": 18.121,
+          "end": 20.815
+        },
+        {
+          "id": "ls-9",
+          "speaker": "b",
+          "es": "Sí, sé. Tengo amigos aquí.",
+          "en": "Yes, I know. I have friends here.",
+          "start": 21.095,
+          "end": 22.86
+        },
+        {
+          "id": "ls-10",
+          "speaker": "a",
+          "es": "Excelente. ¿Quiere estudiar más?",
+          "en": "Excellent. Do you want to study more?",
+          "start": 23.14,
+          "end": 25.926
+        },
+        {
+          "id": "ls-11",
+          "speaker": "b",
+          "es": "Sí. ¿Puedo escribir las palabras?",
+          "en": "Yes. Can I write the words?",
+          "start": 26.206,
+          "end": 28.528
+        },
+        {
+          "id": "ls-12",
+          "speaker": "a",
+          "es": "Sí. Escríbalas, por favor.",
+          "en": "Yes. Write them, please.",
+          "start": 28.808,
+          "end": 30.526
+        },
+        {
+          "id": "ls-13",
+          "speaker": "b",
+          "es": "De acuerdo. ¿Puede decir otra vez?",
+          "en": "Agreed. Can you say it again?",
+          "start": 30.806,
+          "end": 33.174
+        },
+        {
+          "id": "ls-14",
+          "speaker": "a",
+          "es": "Cómo no. «Quiero aprender español.»",
+          "en": "Of course. “I want to learn Spanish.”",
+          "start": 33.454,
+          "end": 36.148
+        },
+        {
+          "id": "ls-15",
+          "speaker": "b",
+          "es": "Quiero aprender español. ¿Está bien?",
+          "en": "I want to learn Spanish. Is that okay?",
+          "start": 36.428,
+          "end": 39.168
+        },
+        {
+          "id": "ls-16",
+          "speaker": "a",
+          "es": "Sí, está muy bien. Habla usted bien.",
+          "en": "Yes, that's very good. You speak well.",
+          "start": 39.448,
+          "end": 42.095
+        },
+        {
+          "id": "ls-17",
+          "speaker": "b",
+          "es": "Gracias. ¿Podemos hablar mañana también?",
+          "en": "Thanks. Can we talk tomorrow too?",
+          "start": 42.375,
+          "end": 44.976
+        },
+        {
+          "id": "ls-18",
+          "speaker": "a",
+          "es": "Sí. Mañana a las once. ¿Le gusta?",
+          "en": "Yes. Tomorrow at eleven. Do you like that?",
+          "start": 45.256,
+          "end": 47.996
+        },
+        {
+          "id": "ls-19",
+          "speaker": "b",
+          "es": "Me gusta. Nos vemos mañana.",
+          "en": "I like it. See you tomorrow.",
+          "start": 48.276,
+          "end": 50.273
+        },
+        {
+          "id": "ls-20",
+          "speaker": "a",
+          "es": "Hasta mañana. Adiós.",
+          "en": "See you tomorrow. Goodbye.",
+          "start": 50.553,
+          "end": 52.55
+        },
+        {
+          "id": "ls-21",
+          "speaker": "b",
+          "es": "Adiós. Muchas gracias.",
+          "en": "Goodbye. Thank you very much.",
+          "start": 52.83,
+          "end": 54.734
+        }
+      ]
+    },
+    {
+      "id": "weekend-plans",
+      "title": "Plans for tomorrow",
+      "situation": "Deciding what to do tomorrow.",
+      "audioKey": "listening:weekend-plans",
+      "duration": 58.21,
+      "lines": [
+        {
+          "id": "wp-1",
+          "speaker": "a",
+          "es": "Hola. ¿Qué quiere hacer mañana?",
+          "en": "Hi. What do you want to do tomorrow?",
+          "start": 0,
+          "end": 2.322
+        },
+        {
+          "id": "wp-2",
+          "speaker": "b",
+          "es": "No sé. ¿Quiere ir al cine?",
+          "en": "I don't know. Do you want to go to the movies?",
+          "start": 2.602,
+          "end": 4.367
+        },
+        {
+          "id": "wp-3",
+          "speaker": "a",
+          "es": "Sí. ¿O al teatro?",
+          "en": "Yes. Or to the theater?",
+          "start": 4.647,
+          "end": 6.365
+        },
+        {
+          "id": "wp-4",
+          "speaker": "b",
+          "es": "Prefiero el cine. ¿Hay una película buena?",
+          "en": "I prefer the movies. Is there a good movie?",
+          "start": 6.645,
+          "end": 9.153
+        },
+        {
+          "id": "wp-5",
+          "speaker": "a",
+          "es": "Sí. Hay una película a las siete.",
+          "en": "Yes. There's a movie at seven.",
+          "start": 9.433,
+          "end": 11.801
+        },
+        {
+          "id": "wp-6",
+          "speaker": "b",
+          "es": "¿A las siete? ¿Es temprano o tarde?",
+          "en": "At seven? Is that early or late?",
+          "start": 12.081,
+          "end": 14.496
+        },
+        {
+          "id": "wp-7",
+          "speaker": "a",
+          "es": "No es tarde. Está bien.",
+          "en": "It isn't late. It's fine.",
+          "start": 14.776,
+          "end": 16.68
+        },
+        {
+          "id": "wp-8",
+          "speaker": "b",
+          "es": "De acuerdo. ¿Quiere comer antes?",
+          "en": "Agreed. Do you want to eat beforehand?",
+          "start": 16.96,
+          "end": 19.282
+        },
+        {
+          "id": "wp-9",
+          "speaker": "a",
+          "es": "Sí. Quiero comer en un restaurante cerca.",
+          "en": "Yes. I want to eat at a nearby restaurant.",
+          "start": 19.562,
+          "end": 21.977
+        },
+        {
+          "id": "wp-10",
+          "speaker": "b",
+          "es": "¿Dónde está el restaurante?",
+          "en": "Where is the restaurant?",
+          "start": 22.257,
+          "end": 23.743
+        },
+        {
+          "id": "wp-11",
+          "speaker": "a",
+          "es": "Está a la izquierda del cine. ¿Lo ve?",
+          "en": "It's to the left of the movie theater. Do you see it?",
+          "start": 24.023,
+          "end": 26.67
+        },
+        {
+          "id": "wp-12",
+          "speaker": "b",
+          "es": "Sí, lo veo. ¿Vamos juntos?",
+          "en": "Yes, I see it. Shall we go together?",
+          "start": 26.95,
+          "end": 28.575
+        },
+        {
+          "id": "wp-13",
+          "speaker": "a",
+          "es": "Sí, vamos. ¿Quiere hablar con alguien?",
+          "en": "Yes, let's go. Do you want to talk with someone?",
+          "start": 28.855,
+          "end": 31.549
+        },
+        {
+          "id": "wp-14",
+          "speaker": "b",
+          "es": "Sí. Quiero hablar con un amigo.",
+          "en": "Yes. I want to talk with a friend.",
+          "start": 31.829,
+          "end": 34.105
+        },
+        {
+          "id": "wp-15",
+          "speaker": "a",
+          "es": "Excelente. ¿Puede venir?",
+          "en": "Excellent. Can he come?",
+          "start": 34.385,
+          "end": 36.335
+        },
+        {
+          "id": "wp-16",
+          "speaker": "b",
+          "es": "Creo que sí. Puedo hablar por teléfono.",
+          "en": "I think so. I can talk on the phone.",
+          "start": 36.615,
+          "end": 39.262
+        },
+        {
+          "id": "wp-17",
+          "speaker": "a",
+          "es": "Muy bien. Háblele ahora.",
+          "en": "Very well. Talk to him now.",
+          "start": 39.542,
+          "end": 41.353
+        },
+        {
+          "id": "wp-18",
+          "speaker": "b",
+          "es": "De acuerdo. Un momento.",
+          "en": "Agreed. One moment.",
+          "start": 41.633,
+          "end": 43.583
+        },
+        {
+          "id": "wp-19",
+          "speaker": "a",
+          "es": "¿Qué dice?",
+          "en": "What does he say?",
+          "start": 43.863,
+          "end": 47.578
+        },
+        {
+          "id": "wp-20",
+          "speaker": "b",
+          "es": "Dice que sí. Puede venir.",
+          "en": "He says yes. He can come.",
+          "start": 47.858,
+          "end": 49.808
+        },
+        {
+          "id": "wp-21",
+          "speaker": "a",
+          "es": "Excelente. Nos vemos a las seis.",
+          "en": "Excellent. See you at six.",
+          "start": 50.088,
+          "end": 52.41
+        },
+        {
+          "id": "wp-22",
+          "speaker": "b",
+          "es": "A las seis. Hasta luego.",
+          "en": "At six. See you later.",
+          "start": 52.69,
+          "end": 54.548
+        },
+        {
+          "id": "wp-23",
+          "speaker": "a",
+          "es": "Hasta luego. Adiós.",
+          "en": "See you later. Goodbye.",
+          "start": 54.828,
+          "end": 56.639
+        }
+      ]
+    },
+    {
+      "id": "looking-for-help",
+      "title": "Looking for help",
+      "situation": "Someone needs help finding a person and a place.",
+      "audioKey": "listening:looking-for-help",
+      "duration": 58.941,
+      "lines": [
+        {
+          "id": "lh-1",
+          "speaker": "b",
+          "es": "Disculpe, señorita. ¿Puede ayudarme?",
+          "en": "Excuse me, miss. Can you help me?",
+          "start": 0,
+          "end": 2.415
+        },
+        {
+          "id": "lh-2",
+          "speaker": "a",
+          "es": "Sí. ¿Qué necesita?",
+          "en": "Yes. What do you need?",
+          "start": 2.695,
+          "end": 4.413
+        },
+        {
+          "id": "lh-3",
+          "speaker": "b",
+          "es": "Busco a una persona. ¿La conoce?",
+          "en": "I'm looking for a person. Do you know her?",
+          "start": 4.693,
+          "end": 6.922
+        },
+        {
+          "id": "lh-4",
+          "speaker": "a",
+          "es": "¿Quién? ¿Cómo se llama?",
+          "en": "Who? What's her name?",
+          "start": 7.202,
+          "end": 8.781
+        },
+        {
+          "id": "lh-5",
+          "speaker": "b",
+          "es": "Se llama Ana. Es una amiga.",
+          "en": "Her name is Ana. She's a friend.",
+          "start": 9.061,
+          "end": 11.058
+        },
+        {
+          "id": "lh-6",
+          "speaker": "a",
+          "es": "Sí, la conozco. Vive cerca.",
+          "en": "Yes, I know her. She lives nearby.",
+          "start": 11.338,
+          "end": 13.335
+        },
+        {
+          "id": "lh-7",
+          "speaker": "b",
+          "es": "¿Dónde vive?",
+          "en": "Where does she live?",
+          "start": 13.615,
+          "end": 14.637
+        },
+        {
+          "id": "lh-8",
+          "speaker": "a",
+          "es": "Vive en esa calle. ¿La ve?",
+          "en": "She lives on that street. Do you see it?",
+          "start": 14.917,
+          "end": 16.821
+        },
+        {
+          "id": "lh-9",
+          "speaker": "b",
+          "es": "No, no la veo. ¿Está lejos?",
+          "en": "No, I don't see it. Is it far?",
+          "start": 17.101,
+          "end": 19.051
+        },
+        {
+          "id": "lh-10",
+          "speaker": "a",
+          "es": "No. Puede ir derecho dos cuadras.",
+          "en": "No. You can go straight two blocks.",
+          "start": 19.331,
+          "end": 21.885
+        },
+        {
+          "id": "lh-11",
+          "speaker": "b",
+          "es": "Derecho dos cuadras. ¿Y luego?",
+          "en": "Straight two blocks. And then?",
+          "start": 22.165,
+          "end": 24.487
+        },
+        {
+          "id": "lh-12",
+          "speaker": "a",
+          "es": "Luego a la derecha. Su casa está allí.",
+          "en": "Then to the right. Her house is there.",
+          "start": 24.767,
+          "end": 27.507
+        },
+        {
+          "id": "lh-13",
+          "speaker": "b",
+          "es": "¿Puedo ir ahora?",
+          "en": "Can I go now?",
+          "start": 27.787,
+          "end": 29.273
+        },
+        {
+          "id": "lh-14",
+          "speaker": "a",
+          "es": "Sí. Pero ella no está en casa ahora.",
+          "en": "Yes. But she isn't at home now.",
+          "start": 29.553,
+          "end": 32.339
+        },
+        {
+          "id": "lh-15",
+          "speaker": "b",
+          "es": "¿Dónde está?",
+          "en": "Where is she?",
+          "start": 32.619,
+          "end": 33.966
+        },
+        {
+          "id": "lh-16",
+          "speaker": "a",
+          "es": "Está en el restaurante. ¿Quiere ir?",
+          "en": "She's at the restaurant. Do you want to go?",
+          "start": 34.246,
+          "end": 36.893
+        },
+        {
+          "id": "lh-17",
+          "speaker": "b",
+          "es": "Sí. ¿Puede venir conmigo?",
+          "en": "Yes. Can you come with me?",
+          "start": 37.173,
+          "end": 39.077
+        },
+        {
+          "id": "lh-18",
+          "speaker": "a",
+          "es": "Sí, puedo. Vamos juntos.",
+          "en": "Yes, I can. Let's go together.",
+          "start": 39.357,
+          "end": 40.936
+        },
+        {
+          "id": "lh-19",
+          "speaker": "b",
+          "es": "Muchas gracias. Usted es una buena persona.",
+          "en": "Thank you very much. You are a good person.",
+          "start": 41.216,
+          "end": 44.142
+        },
+        {
+          "id": "lh-20",
+          "speaker": "a",
+          "es": "De nada. ¿Habla usted español bien?",
+          "en": "You're welcome. Do you speak Spanish well?",
+          "start": 44.422,
+          "end": 46.976
+        },
+        {
+          "id": "lh-21",
+          "speaker": "b",
+          "es": "Hablo un poco. Todavía aprendo.",
+          "en": "I speak a little. I'm still learning.",
+          "start": 47.256,
+          "end": 49.671
+        },
+        {
+          "id": "lh-22",
+          "speaker": "a",
+          "es": "Está bien. Habla despacio, y yo entiendo.",
+          "en": "That's fine. Speak slowly, and I understand.",
+          "start": 49.951,
+          "end": 52.784
+        },
+        {
+          "id": "lh-23",
+          "speaker": "b",
+          "es": "De acuerdo. Vamos.",
+          "en": "Agreed. Let's go.",
+          "start": 53.064,
+          "end": 54.829
+        },
+        {
+          "id": "lh-24",
+          "speaker": "a",
+          "es": "Sí. El restaurante está aquí.",
+          "en": "Yes. The restaurant is here.",
+          "start": 55.109,
+          "end": 57.338
+        }
+      ]
+    },
+    {
+      "id": "market-day",
+      "title": "At the market",
+      "situation": "Buying food and asking prices at a market.",
+      "audioKey": "listening:market-day",
+      "duration": 65.466,
+      "lines": [
+        {
+          "id": "md-1",
+          "speaker": "a",
+          "es": "Buenos días. ¿Qué quiere comprar?",
+          "en": "Good morning. What do you want to buy?",
+          "start": 0,
+          "end": 3.111
+        },
+        {
+          "id": "md-2",
+          "speaker": "b",
+          "es": "Buenos días. Quiero comprar algo. ¿Hay una panadería?",
+          "en": "Good morning. I want to buy something. Is there a bakery?",
+          "start": 3.391,
+          "end": 6.781
+        },
+        {
+          "id": "md-3",
+          "speaker": "a",
+          "es": "Sí. La panadería está aquí. ¿Quiere algo?",
+          "en": "Yes. The bakery is here. Do you want something?",
+          "start": 7.061,
+          "end": 10.498
+        },
+        {
+          "id": "md-4",
+          "speaker": "b",
+          "es": "Sí, por favor. ¿Cuánto cuesta?",
+          "en": "Yes, please. How much does it cost?",
+          "start": 10.778,
+          "end": 12.496
+        },
+        {
+          "id": "md-5",
+          "speaker": "a",
+          "es": "Cuesta diez pesos.",
+          "en": "It costs ten pesos.",
+          "start": 12.776,
+          "end": 14.773
+        },
+        {
+          "id": "md-6",
+          "speaker": "b",
+          "es": "Diez pesos. Quiero dos. ¿Cuánto cuestan?",
+          "en": "Ten pesos. I want two. How much do they cost?",
+          "start": 15.053,
+          "end": 18.072
+        },
+        {
+          "id": "md-7",
+          "speaker": "a",
+          "es": "Cuestan veinte pesos.",
+          "en": "They cost twenty pesos.",
+          "start": 18.352,
+          "end": 20.117
+        },
+        {
+          "id": "md-8",
+          "speaker": "b",
+          "es": "De acuerdo. ¿Hay leche también?",
+          "en": "Agreed. Is there milk too?",
+          "start": 20.397,
+          "end": 22.765
+        },
+        {
+          "id": "md-9",
+          "speaker": "a",
+          "es": "Sí, hay leche. ¿Quiere una?",
+          "en": "Yes, there is milk. Do you want one?",
+          "start": 23.045,
+          "end": 25.228
+        },
+        {
+          "id": "md-10",
+          "speaker": "b",
+          "es": "Sí. ¿Y refrescos?",
+          "en": "Yes. And sodas?",
+          "start": 25.508,
+          "end": 27.226
+        },
+        {
+          "id": "md-11",
+          "speaker": "a",
+          "es": "Sí. ¿Cuántos refrescos quiere?",
+          "en": "Yes. How many sodas do you want?",
+          "start": 27.506,
+          "end": 29.596
+        },
+        {
+          "id": "md-12",
+          "speaker": "b",
+          "es": "Tres, por favor. ¿Cuánto cuestan?",
+          "en": "Three, please. How much do they cost?",
+          "start": 29.876,
+          "end": 32.198
+        },
+        {
+          "id": "md-13",
+          "speaker": "a",
+          "es": "Los refrescos cuestan quince pesos.",
+          "en": "The sodas cost fifteen pesos.",
+          "start": 32.478,
+          "end": 34.8
+        },
+        {
+          "id": "md-14",
+          "speaker": "b",
+          "es": "Muy bien. ¿Puedo pagar todo ahora?",
+          "en": "Very well. Can I pay for everything now?",
+          "start": 35.08,
+          "end": 37.588
+        },
+        {
+          "id": "md-15",
+          "speaker": "a",
+          "es": "Sí. Son cuarenta y cinco pesos.",
+          "en": "Yes. That's forty-five pesos.",
+          "start": 37.868,
+          "end": 40.376
+        },
+        {
+          "id": "md-16",
+          "speaker": "b",
+          "es": "Aquí tiene. ¿Es suficiente?",
+          "en": "Here you go. Is that enough?",
+          "start": 40.656,
+          "end": 42.653
+        },
+        {
+          "id": "md-17",
+          "speaker": "a",
+          "es": "Sí, es suficiente. Gracias.",
+          "en": "Yes, that's enough. Thank you.",
+          "start": 42.933,
+          "end": 45.162
+        },
+        {
+          "id": "md-18",
+          "speaker": "b",
+          "es": "¿Quiere algo más?",
+          "en": "Do you want anything else?",
+          "start": 45.442,
+          "end": 46.649
+        },
+        {
+          "id": "md-19",
+          "speaker": "a",
+          "es": "Sí. Quiero algo más.",
+          "en": "Yes. I want something else.",
+          "start": 46.929,
+          "end": 48.415
+        },
+        {
+          "id": "md-20",
+          "speaker": "b",
+          "es": "Quiero un té. ¿Hay té aquí?",
+          "en": "I want tea. Is there tea here?",
+          "start": 48.695,
+          "end": 50.506
+        },
+        {
+          "id": "md-21",
+          "speaker": "a",
+          "es": "Sí. Una taza de té cuesta cinco pesos.",
+          "en": "Yes. A cup of tea costs five pesos.",
+          "start": 50.786,
+          "end": 53.572
+        },
+        {
+          "id": "md-22",
+          "speaker": "b",
+          "es": "Excelente. Quiero té también.",
+          "en": "Excellent. I want tea too.",
+          "start": 53.852,
+          "end": 55.895
+        },
+        {
+          "id": "md-23",
+          "speaker": "a",
+          "es": "De acuerdo. Cincuenta pesos en total.",
+          "en": "Agreed. Fifty pesos in total.",
+          "start": 56.175,
+          "end": 59.147
+        },
+        {
+          "id": "md-24",
+          "speaker": "b",
+          "es": "De acuerdo. Muchas gracias. Adiós.",
+          "en": "Agreed. Thank you very much. Goodbye.",
+          "start": 59.427,
+          "end": 62.074
+        },
+        {
+          "id": "md-25",
+          "speaker": "a",
+          "es": "De nada. Adiós.",
+          "en": "You're welcome. Goodbye.",
+          "start": 62.354,
+          "end": 63.794
+        }
+      ]
+    },
+    {
+      "id": "visiting-friend",
+      "title": "Visiting a friend",
+      "situation": "Arriving at a friend's house for a visit.",
+      "audioKey": "listening:visiting-friend",
+      "duration": 63.411,
+      "lines": [
+        {
+          "id": "vf-1",
+          "speaker": "b",
+          "es": "Hola, María. ¿Está en casa?",
+          "en": "Hi, María. Are you home?",
+          "start": 0,
+          "end": 1.765
+        },
+        {
+          "id": "vf-2",
+          "speaker": "a",
+          "es": "Sí. Buenos días. ¿Cómo está?",
+          "en": "Yes. Good morning. How are you?",
+          "start": 2.045,
+          "end": 3.995
+        },
+        {
+          "id": "vf-3",
+          "speaker": "b",
+          "es": "Bien, gracias. ¿Y usted?",
+          "en": "Fine, thanks. And you?",
+          "start": 4.275,
+          "end": 5.854
+        },
+        {
+          "id": "vf-4",
+          "speaker": "a",
+          "es": "Muy bien. ¿Quiere tomar algo?",
+          "en": "Very well. Do you want to drink something?",
+          "start": 6.134,
+          "end": 8.41
+        },
+        {
+          "id": "vf-5",
+          "speaker": "b",
+          "es": "Sí. Quiero un vaso de agua, por favor.",
+          "en": "Yes. I want a glass of water, please.",
+          "start": 8.69,
+          "end": 11.198
+        },
+        {
+          "id": "vf-6",
+          "speaker": "a",
+          "es": "Aquí tiene. ¿Quiere té también?",
+          "en": "Here you go. Do you want tea too?",
+          "start": 11.478,
+          "end": 13.846
+        },
+        {
+          "id": "vf-7",
+          "speaker": "b",
+          "es": "No, gracias. El agua está bien.",
+          "en": "No, thanks. The water is fine.",
+          "start": 14.126,
+          "end": 16.262
+        },
+        {
+          "id": "vf-8",
+          "speaker": "a",
+          "es": "De acuerdo. ¿Quiere sentarse?",
+          "en": "Agreed. Do you want to sit down?",
+          "start": 16.542,
+          "end": 18.725
+        },
+        {
+          "id": "vf-9",
+          "speaker": "b",
+          "es": "Sí. Su casa es muy buena.",
+          "en": "Yes. Your house is very nice.",
+          "start": 19.005,
+          "end": 20.816
+        },
+        {
+          "id": "vf-10",
+          "speaker": "a",
+          "es": "Gracias. ¿Vive usted cerca?",
+          "en": "Thank you. Do you live nearby?",
+          "start": 21.096,
+          "end": 23
+        },
+        {
+          "id": "vf-11",
+          "speaker": "b",
+          "es": "Sí, vivo cerca. Tres cuadras.",
+          "en": "Yes, I live nearby. Three blocks.",
+          "start": 23.28,
+          "end": 25.323
+        },
+        {
+          "id": "vf-12",
+          "speaker": "a",
+          "es": "Excelente. Podemos vernos más.",
+          "en": "Excellent. We can see each other more.",
+          "start": 25.603,
+          "end": 27.786
+        },
+        {
+          "id": "vf-13",
+          "speaker": "b",
+          "es": "Sí. ¿Qué quiere hacer hoy?",
+          "en": "Yes. What do you want to do today?",
+          "start": 28.066,
+          "end": 30.109
+        },
+        {
+          "id": "vf-14",
+          "speaker": "a",
+          "es": "Quiero hablar. ¿Habla usted inglés?",
+          "en": "I want to talk. Do you speak English?",
+          "start": 30.389,
+          "end": 32.897
+        },
+        {
+          "id": "vf-15",
+          "speaker": "b",
+          "es": "Hablo un poco. Prefiero español.",
+          "en": "I speak a little. I prefer Spanish.",
+          "start": 33.177,
+          "end": 35.685
+        },
+        {
+          "id": "vf-16",
+          "speaker": "a",
+          "es": "Yo también. Podemos hablar español.",
+          "en": "Me too. We can speak Spanish.",
+          "start": 35.965,
+          "end": 38.751
+        },
+        {
+          "id": "vf-17",
+          "speaker": "b",
+          "es": "¿Quiere ir al cine más tarde?",
+          "en": "Do you want to go to the movies later?",
+          "start": 39.031,
+          "end": 40.796
+        },
+        {
+          "id": "vf-18",
+          "speaker": "a",
+          "es": "Sí, me gusta. ¿A qué hora?",
+          "en": "Yes, I like that. At what time?",
+          "start": 41.076,
+          "end": 43.212
+        },
+        {
+          "id": "vf-19",
+          "speaker": "b",
+          "es": "A las ocho. ¿Puede?",
+          "en": "At eight. Can you?",
+          "start": 43.492,
+          "end": 45.164
+        },
+        {
+          "id": "vf-20",
+          "speaker": "a",
+          "es": "Sí, puedo. ¿Quiere comer antes?",
+          "en": "Yes, I can. Do you want to eat beforehand?",
+          "start": 45.444,
+          "end": 47.487
+        },
+        {
+          "id": "vf-21",
+          "speaker": "b",
+          "es": "Sí. Hay un restaurante cerca de aquí.",
+          "en": "Yes. There's a restaurant near here.",
+          "start": 47.767,
+          "end": 50.368
+        },
+        {
+          "id": "vf-22",
+          "speaker": "a",
+          "es": "Excelente. Nos vemos a las siete.",
+          "en": "Excellent. See you at seven.",
+          "start": 50.648,
+          "end": 53.481
+        },
+        {
+          "id": "vf-23",
+          "speaker": "b",
+          "es": "A las siete. Muchas gracias por el agua.",
+          "en": "At seven. Thank you very much for the water.",
+          "start": 53.761,
+          "end": 56.408
+        },
+        {
+          "id": "vf-24",
+          "speaker": "a",
+          "es": "De nada. Hasta luego.",
+          "en": "You're welcome. See you later.",
+          "start": 56.688,
+          "end": 58.778
+        },
+        {
+          "id": "vf-25",
+          "speaker": "b",
+          "es": "Hasta luego. Adiós.",
+          "en": "See you later. Goodbye.",
+          "start": 59.058,
+          "end": 60.637
+        },
+        {
+          "id": "vf-26",
+          "speaker": "a",
+          "es": "Adiós.",
+          "en": "Goodbye.",
+          "start": 60.917,
+          "end": 61.66
+        }
+      ]
+    },
+    {
+      "id": "travel-plans",
+      "title": "Travel plans",
+      "situation": "Planning a short vacation trip.",
+      "audioKey": "listening:travel-plans",
+      "duration": 70.943,
+      "lines": [
+        {
+          "id": "tp-1",
+          "speaker": "a",
+          "es": "Carlos, ¿quiere ir de vacaciones?",
+          "en": "Carlos, do you want to go on vacation?",
+          "start": 0,
+          "end": 2.647
+        },
+        {
+          "id": "tp-2",
+          "speaker": "b",
+          "es": "Sí. ¿Adónde quiere ir?",
+          "en": "Yes. Where do you want to go?",
+          "start": 2.927,
+          "end": 4.831
+        },
+        {
+          "id": "tp-3",
+          "speaker": "a",
+          "es": "Quiero ir a México. ¿Le gusta?",
+          "en": "I want to go to Mexico. Do you like that?",
+          "start": 5.111,
+          "end": 7.619
+        },
+        {
+          "id": "tp-4",
+          "speaker": "b",
+          "es": "Sí, me gusta. ¿Cuándo?",
+          "en": "Yes, I like it. When?",
+          "start": 7.899,
+          "end": 9.432
+        },
+        {
+          "id": "tp-5",
+          "speaker": "a",
+          "es": "La semana que viene. ¿Puede?",
+          "en": "Next week. Can you?",
+          "start": 9.712,
+          "end": 11.755
+        },
+        {
+          "id": "tp-6",
+          "speaker": "b",
+          "es": "Creo que sí. ¿Por cuánto tiempo?",
+          "en": "I think so. For how long?",
+          "start": 12.035,
+          "end": 14.264
+        },
+        {
+          "id": "tp-7",
+          "speaker": "a",
+          "es": "Por una semana. ¿Es suficiente?",
+          "en": "For one week. Is that enough?",
+          "start": 14.544,
+          "end": 16.587
+        },
+        {
+          "id": "tp-8",
+          "speaker": "b",
+          "es": "Sí. ¿Dónde vamos a vivir?",
+          "en": "Yes. Where are we going to stay?",
+          "start": 16.867,
+          "end": 18.771
+        },
+        {
+          "id": "tp-9",
+          "speaker": "a",
+          "es": "En un hotel. ¿Quiere un hotel grande?",
+          "en": "In a hotel. Do you want a large hotel?",
+          "start": 19.051,
+          "end": 21.837
+        },
+        {
+          "id": "tp-10",
+          "speaker": "b",
+          "es": "No. Prefiero un hotel pequeño cerca.",
+          "en": "No. I prefer a small hotel nearby.",
+          "start": 22.117,
+          "end": 24.764
+        },
+        {
+          "id": "tp-11",
+          "speaker": "a",
+          "es": "De acuerdo. ¿Cuánto cuesta?",
+          "en": "Agreed. How much does it cost?",
+          "start": 25.044,
+          "end": 27.366
+        },
+        {
+          "id": "tp-12",
+          "speaker": "b",
+          "es": "No sé. ¿Puede saber usted?",
+          "en": "I don't know. Can you find out?",
+          "start": 27.646,
+          "end": 29.411
+        },
+        {
+          "id": "tp-13",
+          "speaker": "a",
+          "es": "Sí. Puedo hablar por teléfono.",
+          "en": "Yes. I can talk on the phone.",
+          "start": 29.691,
+          "end": 32.106
+        },
+        {
+          "id": "tp-14",
+          "speaker": "b",
+          "es": "Excelente. ¿Qué quiere hacer allí?",
+          "en": "Excellent. What do you want to do there?",
+          "start": 32.386,
+          "end": 34.754
+        },
+        {
+          "id": "tp-15",
+          "speaker": "a",
+          "es": "Quiero comer, hablar español, y ver a la gente.",
+          "en": "I want to eat, speak Spanish, and see people.",
+          "start": 35.034,
+          "end": 38.563
+        },
+        {
+          "id": "tp-16",
+          "speaker": "b",
+          "es": "Yo también. ¿Hay buenos restaurantes?",
+          "en": "Me too. Are there good restaurants?",
+          "start": 38.843,
+          "end": 41.583
+        },
+        {
+          "id": "tp-17",
+          "speaker": "a",
+          "es": "Sí. Y hay un cine y un teatro.",
+          "en": "Yes. And there's a movie theater and a theater.",
+          "start": 41.863,
+          "end": 44.092
+        },
+        {
+          "id": "tp-18",
+          "speaker": "b",
+          "es": "Excelente. ¿Necesitamos mucho dinero?",
+          "en": "Excellent. Do we need a lot of money?",
+          "start": 44.372,
+          "end": 47.344
+        },
+        {
+          "id": "tp-19",
+          "speaker": "a",
+          "es": "Un poco. Cien dólares es suficiente, creo.",
+          "en": "A little. One hundred dollars is enough, I think.",
+          "start": 47.624,
+          "end": 50.828
+        },
+        {
+          "id": "tp-20",
+          "speaker": "b",
+          "es": "De acuerdo. Yo puedo pagar mi hotel.",
+          "en": "Agreed. I can pay for my hotel.",
+          "start": 51.108,
+          "end": 53.755
+        },
+        {
+          "id": "tp-21",
+          "speaker": "a",
+          "es": "Y yo puedo pagar el mío. ¿Vamos juntos?",
+          "en": "And I can pay for mine. Shall we go together?",
+          "start": 54.035,
+          "end": 56.868
+        },
+        {
+          "id": "tp-22",
+          "speaker": "b",
+          "es": "Sí, vamos juntos. Me gusta.",
+          "en": "Yes, let's go together. I like that.",
+          "start": 57.148,
+          "end": 58.913
+        },
+        {
+          "id": "tp-23",
+          "speaker": "a",
+          "es": "Nos vemos mañana para hablar más.",
+          "en": "See you tomorrow to talk more.",
+          "start": 59.193,
+          "end": 61.422
+        },
+        {
+          "id": "tp-24",
+          "speaker": "b",
+          "es": "Sí. Mañana a las once.",
+          "en": "Yes. Tomorrow at eleven.",
+          "start": 61.702,
+          "end": 63.374
+        },
+        {
+          "id": "tp-25",
+          "speaker": "a",
+          "es": "A las once. Hasta mañana.",
+          "en": "At eleven. See you tomorrow.",
+          "start": 63.654,
+          "end": 65.837
+        },
+        {
+          "id": "tp-26",
+          "speaker": "b",
+          "es": "Hasta mañana. Adiós.",
+          "en": "See you tomorrow. Goodbye.",
+          "start": 66.117,
+          "end": 67.928
+        },
+        {
+          "id": "tp-27",
+          "speaker": "a",
+          "es": "Adiós.",
+          "en": "Goodbye.",
+          "start": 68.208,
+          "end": 69.09
+        }
+      ]
+    },
+    {
+      "id": "morning-chat",
+      "title": "Morning chat",
+      "situation": "A longer morning conversation about the day ahead.",
+      "audioKey": "listening:morning-chat",
+      "duration": 82.175,
+      "lines": [
+        {
+          "id": "mc-1",
+          "speaker": "a",
+          "es": "Buenos días, Carlos.",
+          "en": "Good morning, Carlos.",
+          "start": 0,
+          "end": 1.672
+        },
+        {
+          "id": "mc-2",
+          "speaker": "b",
+          "es": "Buenos días, María. ¿Cómo está usted?",
+          "en": "Good morning, María. How are you?",
+          "start": 1.952,
+          "end": 4.32
+        },
+        {
+          "id": "mc-3",
+          "speaker": "a",
+          "es": "Muy bien. ¿Y usted?",
+          "en": "Very well. And you?",
+          "start": 4.6,
+          "end": 6.597
+        },
+        {
+          "id": "mc-4",
+          "speaker": "b",
+          "es": "Bien, gracias. ¿Qué hora es?",
+          "en": "Fine, thanks. What time is it?",
+          "start": 6.877,
+          "end": 8.456
+        },
+        {
+          "id": "mc-5",
+          "speaker": "a",
+          "es": "Son las nueve. ¿Es temprano?",
+          "en": "It's nine. Is that early?",
+          "start": 8.736,
+          "end": 10.826
+        },
+        {
+          "id": "mc-6",
+          "speaker": "b",
+          "es": "Un poco. ¿Qué quiere hacer hoy?",
+          "en": "A little. What do you want to do today?",
+          "start": 11.106,
+          "end": 13.614
+        },
+        {
+          "id": "mc-7",
+          "speaker": "a",
+          "es": "Quiero estudiar español. ¿Quiere estudiar conmigo?",
+          "en": "I want to study Spanish. Do you want to study with me?",
+          "start": 13.894,
+          "end": 18.306
+        },
+        {
+          "id": "mc-8",
+          "speaker": "b",
+          "es": "Sí. ¿Dónde?",
+          "en": "Yes. Where?",
+          "start": 18.586,
+          "end": 19.886
+        },
+        {
+          "id": "mc-9",
+          "speaker": "a",
+          "es": "En mi casa. ¿Puede venir?",
+          "en": "At my house. Can you come?",
+          "start": 20.166,
+          "end": 22.024
+        },
+        {
+          "id": "mc-10",
+          "speaker": "b",
+          "es": "Sí. ¿A qué hora?",
+          "en": "Yes. At what time?",
+          "start": 22.304,
+          "end": 23.837
+        },
+        {
+          "id": "mc-11",
+          "speaker": "a",
+          "es": "A las once. ¿Está bien?",
+          "en": "At eleven. Is that fine?",
+          "start": 24.117,
+          "end": 25.928
+        },
+        {
+          "id": "mc-12",
+          "speaker": "b",
+          "es": "Sí. ¿Quiere tomar un té antes?",
+          "en": "Yes. Do you want to have tea beforehand?",
+          "start": 26.208,
+          "end": 28.437
+        },
+        {
+          "id": "mc-13",
+          "speaker": "a",
+          "es": "Prefiero té. ¿Hay un lugar cerca?",
+          "en": "I prefer tea. Is there a place nearby?",
+          "start": 28.717,
+          "end": 31.039
+        },
+        {
+          "id": "mc-14",
+          "speaker": "b",
+          "es": "Sí. Hay un restaurante a dos cuadras.",
+          "en": "Yes. There's a restaurant two blocks away.",
+          "start": 31.319,
+          "end": 34.152
+        },
+        {
+          "id": "mc-15",
+          "speaker": "a",
+          "es": "Excelente. ¿Vamos ahora?",
+          "en": "Excellent. Shall we go now?",
+          "start": 34.432,
+          "end": 36.615
+        },
+        {
+          "id": "mc-16",
+          "speaker": "b",
+          "es": "Sí, vamos. ¿Quiere ir a la derecha o a la izquierda?",
+          "en": "Yes, let's go. Do you want to go right or left?",
+          "start": 36.895,
+          "end": 40.099
+        },
+        {
+          "id": "mc-17",
+          "speaker": "a",
+          "es": "A la derecha. Luego derecho.",
+          "en": "To the right. Then straight.",
+          "start": 40.379,
+          "end": 42.794
+        },
+        {
+          "id": "mc-18",
+          "speaker": "b",
+          "es": "De acuerdo. ¿Habla usted con mucha gente aquí?",
+          "en": "Agreed. Do you talk with a lot of people here?",
+          "start": 43.074,
+          "end": 46.046
+        },
+        {
+          "id": "mc-19",
+          "speaker": "a",
+          "es": "Sí. Me gusta hablar. ¿Y usted?",
+          "en": "Yes. I like to talk. And you?",
+          "start": 46.326,
+          "end": 48.787
+        },
+        {
+          "id": "mc-20",
+          "speaker": "b",
+          "es": "Yo también. Todavía aprendo, pero puedo hablar.",
+          "en": "Me too. I'm still learning, but I can talk.",
+          "start": 49.067,
+          "end": 52.132
+        },
+        {
+          "id": "mc-21",
+          "speaker": "a",
+          "es": "Habla usted bien. ¿Entiende cuando hablo rápido?",
+          "en": "You speak well. Do you understand when I speak fast?",
+          "start": 52.412,
+          "end": 55.849
+        },
+        {
+          "id": "mc-22",
+          "speaker": "b",
+          "es": "No siempre. Hable más despacio, por favor.",
+          "en": "Not always. Please speak more slowly.",
+          "start": 56.129,
+          "end": 58.823
+        },
+        {
+          "id": "mc-23",
+          "speaker": "a",
+          "es": "De acuerdo. Hablo despacio.",
+          "en": "Agreed. I'll speak slowly.",
+          "start": 59.103,
+          "end": 61.193
+        },
+        {
+          "id": "mc-24",
+          "speaker": "b",
+          "es": "Gracias. ¿Quiere comer después de estudiar?",
+          "en": "Thanks. Do you want to eat after studying?",
+          "start": 61.473,
+          "end": 64.259
+        },
+        {
+          "id": "mc-25",
+          "speaker": "a",
+          "es": "Sí. Quiero comer mole. ¿Le gusta?",
+          "en": "Yes. I want to eat mole. Do you like it?",
+          "start": 64.539,
+          "end": 67.372
+        },
+        {
+          "id": "mc-26",
+          "speaker": "b",
+          "es": "Sí, me gusta mucho. Vamos juntos.",
+          "en": "Yes, I like it a lot. Let's go together.",
+          "start": 67.652,
+          "end": 69.788
+        },
+        {
+          "id": "mc-27",
+          "speaker": "a",
+          "es": "Excelente. Aquí está el restaurante.",
+          "en": "Excellent. Here's the restaurant.",
+          "start": 70.068,
+          "end": 72.808
+        },
+        {
+          "id": "mc-28",
+          "speaker": "b",
+          "es": "Muy bien. Tomamos un té, y luego estudiamos.",
+          "en": "Very well. We'll have tea, and then we study.",
+          "start": 73.088,
+          "end": 75.921
+        },
+        {
+          "id": "mc-29",
+          "speaker": "a",
+          "es": "Sí. Me gusta ese plan.",
+          "en": "Yes. I like that plan.",
+          "start": 76.201,
+          "end": 78.151
+        },
+        {
+          "id": "mc-30",
+          "speaker": "b",
+          "es": "Yo también. Gracias.",
+          "en": "Me too. Thank you.",
+          "start": 78.431,
+          "end": 80.149
+        }
+      ]
+    },
+    {
+      "id": "money-and-pay",
+      "title": "Money and paying",
+      "situation": "Talking about prices, dollars, and pesos.",
+      "audioKey": "listening:money-and-pay",
+      "duration": 40.353,
+      "lines": [
+        {
+          "id": "mp-1",
+          "speaker": "b",
+          "es": "Disculpe. ¿Cuánto cuesta esto?",
+          "en": "Excuse me. How much does this cost?",
+          "start": 0,
+          "end": 2.136
+        },
+        {
+          "id": "mp-2",
+          "speaker": "a",
+          "es": "Cuesta treinta pesos.",
+          "en": "It costs thirty pesos.",
+          "start": 2.416,
+          "end": 3.902
+        },
+        {
+          "id": "mp-3",
+          "speaker": "b",
+          "es": "¿Treinta pesos? ¿Puedo pagar con dólares?",
+          "en": "Thirty pesos? Can I pay with dollars?",
+          "start": 4.182,
+          "end": 6.736
+        },
+        {
+          "id": "mp-4",
+          "speaker": "a",
+          "es": "Sí. Un dólar es suficiente, creo.",
+          "en": "Yes. One dollar is enough, I think.",
+          "start": 7.016,
+          "end": 9.895
+        },
+        {
+          "id": "mp-5",
+          "speaker": "b",
+          "es": "¿Un dólar? ¿Es suficiente?",
+          "en": "One dollar? Is that enough?",
+          "start": 10.175,
+          "end": 11.94
+        },
+        {
+          "id": "mp-6",
+          "speaker": "a",
+          "es": "Sí. O puede pagar veinte pesos.",
+          "en": "Yes. Or you can pay twenty pesos.",
+          "start": 12.22,
+          "end": 15.006
+        },
+        {
+          "id": "mp-7",
+          "speaker": "b",
+          "es": "Prefiero pagar con pesos. Aquí tiene.",
+          "en": "I prefer to pay with pesos. Here you go.",
+          "start": 15.286,
+          "end": 17.933
+        },
+        {
+          "id": "mp-8",
+          "speaker": "a",
+          "es": "Gracias. ¿Quiere algo más?",
+          "en": "Thank you. Do you want anything else?",
+          "start": 18.213,
+          "end": 20.256
+        },
+        {
+          "id": "mp-9",
+          "speaker": "b",
+          "es": "Sí. Quiero un refresco. ¿Cuánto cuesta?",
+          "en": "Yes. I want a soda. How much does it cost?",
+          "start": 20.536,
+          "end": 23.369
+        },
+        {
+          "id": "mp-10",
+          "speaker": "a",
+          "es": "Cinco pesos.",
+          "en": "Five pesos.",
+          "start": 23.649,
+          "end": 25.089
+        },
+        {
+          "id": "mp-11",
+          "speaker": "b",
+          "es": "De acuerdo. ¿Puedo pagar todo ahora?",
+          "en": "Agreed. Can I pay for everything now?",
+          "start": 25.369,
+          "end": 27.877
+        },
+        {
+          "id": "mp-12",
+          "speaker": "a",
+          "es": "Sí. Son treinta y cinco pesos.",
+          "en": "Yes. That's thirty-five pesos.",
+          "start": 28.157,
+          "end": 30.433
+        },
+        {
+          "id": "mp-13",
+          "speaker": "b",
+          "es": "Aquí tiene cuarenta. ¿Está bien?",
+          "en": "Here's forty. Is that okay?",
+          "start": 30.713,
+          "end": 32.756
+        },
+        {
+          "id": "mp-14",
+          "speaker": "a",
+          "es": "Sí. Aquí tiene cinco pesos.",
+          "en": "Yes. Here's five pesos.",
+          "start": 33.036,
+          "end": 35.404
+        },
+        {
+          "id": "mp-15",
+          "speaker": "b",
+          "es": "Muchas gracias. Adiós.",
+          "en": "Thank you very much. Goodbye.",
+          "start": 35.684,
+          "end": 37.263
+        },
+        {
+          "id": "mp-16",
+          "speaker": "a",
+          "es": "De nada. Adiós.",
+          "en": "You're welcome. Goodbye.",
+          "start": 37.543,
+          "end": 39.261
+        }
+      ]
+    },
+    {
+      "id": "going-for-a-walk",
+      "title": "Going for a walk",
+      "situation": "Friends decide to walk around town.",
+      "audioKey": "listening:going-for-a-walk",
+      "duration": 43.308,
+      "lines": [
+        {
+          "id": "gw-1",
+          "speaker": "a",
+          "es": "Hola. ¿Quiere ir conmigo?",
+          "en": "Hi. Do you want to go with me?",
+          "start": 0,
+          "end": 1.95
+        },
+        {
+          "id": "gw-2",
+          "speaker": "b",
+          "es": "¿Adónde?",
+          "en": "Where to?",
+          "start": 2.23,
+          "end": 3.205
+        },
+        {
+          "id": "gw-3",
+          "speaker": "a",
+          "es": "Quiero ir por aquí. ¿Quiere ir conmigo?",
+          "en": "I want to go around here. Do you want to go with me?",
+          "start": 3.485,
+          "end": 6.179
+        },
+        {
+          "id": "gw-4",
+          "speaker": "b",
+          "es": "Sí. ¿Está lejos?",
+          "en": "Yes. Is it far?",
+          "start": 6.459,
+          "end": 8.038
+        },
+        {
+          "id": "gw-5",
+          "speaker": "a",
+          "es": "No. Podemos ir derecho, luego a la izquierda.",
+          "en": "No. We can go straight, then left.",
+          "start": 8.318,
+          "end": 11.894
+        },
+        {
+          "id": "gw-6",
+          "speaker": "b",
+          "es": "De acuerdo. ¿Qué hay por allí?",
+          "en": "Agreed. What's over there?",
+          "start": 12.174,
+          "end": 14.124
+        },
+        {
+          "id": "gw-7",
+          "speaker": "a",
+          "es": "Hay una avenida grande. Y hay gente.",
+          "en": "There's a big avenue. And there are people.",
+          "start": 14.404,
+          "end": 17.237
+        },
+        {
+          "id": "gw-8",
+          "speaker": "b",
+          "es": "¿Quiere tomar algo después?",
+          "en": "Do you want to drink something afterward?",
+          "start": 17.517,
+          "end": 19.096
+        },
+        {
+          "id": "gw-9",
+          "speaker": "a",
+          "es": "Sí. Prefiero un té. ¿Y usted?",
+          "en": "Yes. I prefer tea. And you?",
+          "start": 19.376,
+          "end": 22.116
+        },
+        {
+          "id": "gw-10",
+          "speaker": "b",
+          "es": "Yo quiero un refresco.",
+          "en": "I want a soda.",
+          "start": 22.396,
+          "end": 23.929
+        },
+        {
+          "id": "gw-11",
+          "speaker": "a",
+          "es": "Muy bien. Hay un lugar cerca del cine.",
+          "en": "Very well. There's a place near the movie theater.",
+          "start": 24.209,
+          "end": 26.995
+        },
+        {
+          "id": "gw-12",
+          "speaker": "b",
+          "es": "¿El cine está aquí?",
+          "en": "Is the movie theater here?",
+          "start": 27.275,
+          "end": 28.575
+        },
+        {
+          "id": "gw-13",
+          "speaker": "a",
+          "es": "Sí, lo ve. Está a la derecha.",
+          "en": "Yes, you see it. It's to the right.",
+          "start": 28.855,
+          "end": 30.852
+        },
+        {
+          "id": "gw-14",
+          "speaker": "b",
+          "es": "Ah, sí. Lo veo. Vamos.",
+          "en": "Ah, yes. I see it. Let's go.",
+          "start": 31.132,
+          "end": 32.804
+        },
+        {
+          "id": "gw-15",
+          "speaker": "a",
+          "es": "¿Quiere ir rápido o despacio?",
+          "en": "Do you want to go fast or slowly?",
+          "start": 33.084,
+          "end": 35.313
+        },
+        {
+          "id": "gw-16",
+          "speaker": "b",
+          "es": "Despacio. No es tarde.",
+          "en": "Slowly. It isn't late.",
+          "start": 35.593,
+          "end": 37.636
+        },
+        {
+          "id": "gw-17",
+          "speaker": "a",
+          "es": "Excelente. Me gusta ir con usted.",
+          "en": "Excellent. I like going with you.",
+          "start": 37.916,
+          "end": 40.331
+        },
+        {
+          "id": "gw-18",
+          "speaker": "b",
+          "es": "Yo también. Gracias.",
+          "en": "Me too. Thank you.",
+          "start": 40.611,
+          "end": 42.097
+        }
+      ]
+    },
+    {
+      "id": "long-directions",
+      "title": "Getting detailed directions",
+      "situation": "A longer exchange finding several places in town.",
+      "audioKey": "listening:long-directions",
+      "duration": 91.388,
+      "lines": [
+        {
+          "id": "ld-1",
+          "speaker": "b",
+          "es": "Disculpe. ¿Puede ayudarme? No sé dónde estoy.",
+          "en": "Excuse me. Can you help me? I don't know where I am.",
+          "start": 0,
+          "end": 3.437
+        },
+        {
+          "id": "ld-2",
+          "speaker": "a",
+          "es": "Sí. ¿Adónde quiere ir?",
+          "en": "Yes. Where do you want to go?",
+          "start": 3.717,
+          "end": 5.714
+        },
+        {
+          "id": "ld-3",
+          "speaker": "b",
+          "es": "Quiero ir al hotel. ¿Dónde está?",
+          "en": "I want to go to the hotel. Where is it?",
+          "start": 5.994,
+          "end": 8.362
+        },
+        {
+          "id": "ld-4",
+          "speaker": "a",
+          "es": "El hotel está lejos. ¿Quiere ir ahora?",
+          "en": "The hotel is far. Do you want to go now?",
+          "start": 8.642,
+          "end": 11.243
+        },
+        {
+          "id": "ld-5",
+          "speaker": "b",
+          "es": "Sí. ¿Cómo puedo ir?",
+          "en": "Yes. How can I go?",
+          "start": 11.523,
+          "end": 13.148
+        },
+        {
+          "id": "ld-6",
+          "speaker": "a",
+          "es": "Puede ir a la derecha dos cuadras.",
+          "en": "You can go right two blocks.",
+          "start": 13.428,
+          "end": 16.168
+        },
+        {
+          "id": "ld-7",
+          "speaker": "b",
+          "es": "A la derecha dos cuadras. ¿Y luego?",
+          "en": "Right two blocks. And then?",
+          "start": 16.448,
+          "end": 18.677
+        },
+        {
+          "id": "ld-8",
+          "speaker": "a",
+          "es": "Luego derecho tres cuadras. ¿Entiende?",
+          "en": "Then straight three blocks. Do you understand?",
+          "start": 18.957,
+          "end": 21.697
+        },
+        {
+          "id": "ld-9",
+          "speaker": "b",
+          "es": "Sí. ¿Y después?",
+          "en": "Yes. And after that?",
+          "start": 21.977,
+          "end": 23.463
+        },
+        {
+          "id": "ld-10",
+          "speaker": "a",
+          "es": "Después, a la izquierda. El hotel está allí.",
+          "en": "After that, to the left. The hotel is there.",
+          "start": 23.743,
+          "end": 27.272
+        },
+        {
+          "id": "ld-11",
+          "speaker": "b",
+          "es": "¿Puedo ver el hotel desde aquí?",
+          "en": "Can I see the hotel from here?",
+          "start": 27.552,
+          "end": 29.224
+        },
+        {
+          "id": "ld-12",
+          "speaker": "a",
+          "es": "No. No lo ve. Está lejos.",
+          "en": "No. You don't see it. It's far.",
+          "start": 29.504,
+          "end": 32.569
+        },
+        {
+          "id": "ld-13",
+          "speaker": "b",
+          "es": "De acuerdo. ¿Y el restaurante?",
+          "en": "Agreed. And the restaurant?",
+          "start": 32.849,
+          "end": 34.939
+        },
+        {
+          "id": "ld-14",
+          "speaker": "a",
+          "es": "El restaurante está cerca del hotel.",
+          "en": "The restaurant is near the hotel.",
+          "start": 35.219,
+          "end": 37.773
+        },
+        {
+          "id": "ld-15",
+          "speaker": "b",
+          "es": "¿A la izquierda o a la derecha del hotel?",
+          "en": "To the left or the right of the hotel?",
+          "start": 38.053,
+          "end": 40.282
+        },
+        {
+          "id": "ld-16",
+          "speaker": "a",
+          "es": "A la izquierda. ¿Quiere comer allí?",
+          "en": "To the left. Do you want to eat there?",
+          "start": 40.562,
+          "end": 43.023
+        },
+        {
+          "id": "ld-17",
+          "speaker": "b",
+          "es": "Sí. ¿Hay una panadería también?",
+          "en": "Yes. Is there a bakery too?",
+          "start": 43.303,
+          "end": 45.718
+        },
+        {
+          "id": "ld-18",
+          "speaker": "a",
+          "es": "Sí. La panadería está en esa avenida.",
+          "en": "Yes. The bakery is on that avenue.",
+          "start": 45.998,
+          "end": 49.156
+        },
+        {
+          "id": "ld-19",
+          "speaker": "b",
+          "es": "¿Puedo ir a la panadería antes del hotel?",
+          "en": "Can I go to the bakery before the hotel?",
+          "start": 49.436,
+          "end": 51.712
+        },
+        {
+          "id": "ld-20",
+          "speaker": "a",
+          "es": "Sí. Vaya derecho una cuadra. Luego a la derecha.",
+          "en": "Yes. Go straight one block. Then right.",
+          "start": 51.992,
+          "end": 56.032
+        },
+        {
+          "id": "ld-21",
+          "speaker": "b",
+          "es": "Una cuadra, luego a la derecha. ¿Es cerca?",
+          "en": "One block, then right. Is it nearby?",
+          "start": 56.312,
+          "end": 58.866
+        },
+        {
+          "id": "ld-22",
+          "speaker": "a",
+          "es": "Sí, está cerca. Puede ir ahora.",
+          "en": "Yes, it's nearby. You can go now.",
+          "start": 59.146,
+          "end": 61.607
+        },
+        {
+          "id": "ld-23",
+          "speaker": "b",
+          "es": "¿Y el baño? ¿Dónde está un baño?",
+          "en": "And the bathroom? Where is a bathroom?",
+          "start": 61.887,
+          "end": 63.977
+        },
+        {
+          "id": "ld-24",
+          "speaker": "a",
+          "es": "Hay un baño en el restaurante. Está bien.",
+          "en": "There's a bathroom in the restaurant. It's fine.",
+          "start": 64.257,
+          "end": 67.461
+        },
+        {
+          "id": "ld-25",
+          "speaker": "b",
+          "es": "Muchas gracias. Usted me ayuda mucho.",
+          "en": "Thank you very much. You help me a lot.",
+          "start": 67.741,
+          "end": 70.481
+        },
+        {
+          "id": "ld-26",
+          "speaker": "a",
+          "es": "De nada. ¿Habla usted español bien?",
+          "en": "You're welcome. Do you speak Spanish well?",
+          "start": 70.761,
+          "end": 73.269
+        },
+        {
+          "id": "ld-27",
+          "speaker": "b",
+          "es": "Hablo un poco. Todavía no entiendo todo.",
+          "en": "I speak a little. I still don't understand everything.",
+          "start": 73.549,
+          "end": 76.335
+        },
+        {
+          "id": "ld-28",
+          "speaker": "a",
+          "es": "Está bien. Puede preguntar otra vez.",
+          "en": "That's fine. You can ask again.",
+          "start": 76.615,
+          "end": 79.169
+        },
+        {
+          "id": "ld-29",
+          "speaker": "b",
+          "es": "¿Puedo preguntar otra vez más tarde?",
+          "en": "Can I ask again later?",
+          "start": 79.449,
+          "end": 81.771
+        },
+        {
+          "id": "ld-30",
+          "speaker": "a",
+          "es": "Cómo no. Estoy aquí.",
+          "en": "Of course. I'm here.",
+          "start": 82.051,
+          "end": 83.769
+        },
+        {
+          "id": "ld-31",
+          "speaker": "b",
+          "es": "Excelente. Voy al hotel ahora. Adiós.",
+          "en": "Excellent. I'm going to the hotel now. Goodbye.",
+          "start": 84.049,
+          "end": 86.975
+        },
+        {
+          "id": "ld-32",
+          "speaker": "a",
+          "es": "Adiós. Hasta luego.",
+          "en": "Goodbye. See you later.",
+          "start": 87.255,
+          "end": 89.252
+        }
+      ]
+    },
+    {
+      "id": "dinner-invite",
+      "title": "Dinner invitation",
+      "situation": "Inviting a friend to dinner and planning the evening.",
+      "audioKey": "listening:dinner-invite",
+      "duration": 76.478,
+      "lines": [
+        {
+          "id": "di-1",
+          "speaker": "a",
+          "es": "Carlos, ¿quiere comer conmigo esta noche?",
+          "en": "Carlos, do you want to eat with me tonight?",
+          "start": 0,
+          "end": 2.926
+        },
+        {
+          "id": "di-2",
+          "speaker": "b",
+          "es": "Sí. ¿Dónde?",
+          "en": "Yes. Where?",
+          "start": 3.206,
+          "end": 4.321
+        },
+        {
+          "id": "di-3",
+          "speaker": "a",
+          "es": "En mi casa. ¿Le gusta?",
+          "en": "At my house. Do you like that?",
+          "start": 4.601,
+          "end": 6.598
+        },
+        {
+          "id": "di-4",
+          "speaker": "b",
+          "es": "Sí, me gusta. ¿A qué hora?",
+          "en": "Yes, I like it. At what time?",
+          "start": 6.878,
+          "end": 8.643
+        },
+        {
+          "id": "di-5",
+          "speaker": "a",
+          "es": "A las siete. ¿Es temprano?",
+          "en": "At seven. Is that early?",
+          "start": 8.923,
+          "end": 10.873
+        },
+        {
+          "id": "di-6",
+          "speaker": "b",
+          "es": "No, está bien. ¿Qué vamos a comer?",
+          "en": "No, that's fine. What are we going to eat?",
+          "start": 11.153,
+          "end": 13.382
+        },
+        {
+          "id": "di-7",
+          "speaker": "a",
+          "es": "Quiero hacer mole. ¿Le gusta el mole?",
+          "en": "I want to make mole. Do you like mole?",
+          "start": 13.662,
+          "end": 16.495
+        },
+        {
+          "id": "di-8",
+          "speaker": "b",
+          "es": "Sí, mucho. ¿Puedo ayudar?",
+          "en": "Yes, a lot. Can I help?",
+          "start": 16.775,
+          "end": 18.586
+        },
+        {
+          "id": "di-9",
+          "speaker": "a",
+          "es": "Sí. ¿Puede comprar algo en la panadería?",
+          "en": "Yes. Can you buy something at the bakery?",
+          "start": 18.866,
+          "end": 21.606
+        },
+        {
+          "id": "di-10",
+          "speaker": "b",
+          "es": "Sí. ¿Dónde está la panadería?",
+          "en": "Yes. Where is the bakery?",
+          "start": 21.886,
+          "end": 23.929
+        },
+        {
+          "id": "di-11",
+          "speaker": "a",
+          "es": "Está cerca. Dos cuadras a la derecha.",
+          "en": "It's nearby. Two blocks to the right.",
+          "start": 24.209,
+          "end": 27.228
+        },
+        {
+          "id": "di-12",
+          "speaker": "b",
+          "es": "De acuerdo. ¿Quiere leche también?",
+          "en": "Agreed. Do you want milk too?",
+          "start": 27.508,
+          "end": 29.784
+        },
+        {
+          "id": "di-13",
+          "speaker": "a",
+          "es": "Sí, por favor. Y un refresco.",
+          "en": "Yes, please. And a soda.",
+          "start": 30.064,
+          "end": 32.154
+        },
+        {
+          "id": "di-14",
+          "speaker": "b",
+          "es": "¿Cuánto cuesta todo?",
+          "en": "How much does everything cost?",
+          "start": 32.434,
+          "end": 33.874
+        },
+        {
+          "id": "di-15",
+          "speaker": "a",
+          "es": "Creo que cuesta veinte pesos. ¿Es suficiente?",
+          "en": "I think it costs twenty pesos. Is that enough?",
+          "start": 34.154,
+          "end": 37.033
+        },
+        {
+          "id": "di-16",
+          "speaker": "b",
+          "es": "Sí. Yo puedo pagar.",
+          "en": "Yes. I can pay.",
+          "start": 37.313,
+          "end": 39.263
+        },
+        {
+          "id": "di-17",
+          "speaker": "a",
+          "es": "Gracias. ¿Quiere hablar con alguien más?",
+          "en": "Thank you. Do you want to talk with someone else?",
+          "start": 39.543,
+          "end": 41.958
+        },
+        {
+          "id": "di-18",
+          "speaker": "b",
+          "es": "Sí. Quiero hablar con un amigo. ¿Puede?",
+          "en": "Yes. I want to talk with a friend. Is that okay?",
+          "start": 42.238,
+          "end": 44.839
+        },
+        {
+          "id": "di-19",
+          "speaker": "a",
+          "es": "Cómo no. ¿Habla español?",
+          "en": "Of course. Does he speak Spanish?",
+          "start": 45.119,
+          "end": 47.116
+        },
+        {
+          "id": "di-20",
+          "speaker": "b",
+          "es": "Habla un poco. Como yo.",
+          "en": "He speaks a little. Like me.",
+          "start": 47.396,
+          "end": 49.346
+        },
+        {
+          "id": "di-21",
+          "speaker": "a",
+          "es": "Está bien. Podemos hablar despacio.",
+          "en": "That's fine. We can speak slowly.",
+          "start": 49.626,
+          "end": 52.227
+        },
+        {
+          "id": "di-22",
+          "speaker": "b",
+          "es": "Excelente. ¿Quiere que venga a las seis?",
+          "en": "Excellent. Do you want him to come at six?",
+          "start": 52.507,
+          "end": 55.108
+        },
+        {
+          "id": "di-23",
+          "speaker": "a",
+          "es": "Sí. A las seis. Podemos tomar algo antes.",
+          "en": "Yes. At six. We can drink something beforehand.",
+          "start": 55.388,
+          "end": 58.36
+        },
+        {
+          "id": "di-24",
+          "speaker": "b",
+          "es": "¿Té o cerveza?",
+          "en": "Tea or beer?",
+          "start": 58.64,
+          "end": 59.894
+        },
+        {
+          "id": "di-25",
+          "speaker": "a",
+          "es": "Prefiero té. ¿Y usted?",
+          "en": "I prefer tea. And you?",
+          "start": 60.174,
+          "end": 62.032
+        },
+        {
+          "id": "di-26",
+          "speaker": "b",
+          "es": "Yo quiero una cerveza. ¿Hay cerveza?",
+          "en": "I want a beer. Is there beer?",
+          "start": 62.312,
+          "end": 64.959
+        },
+        {
+          "id": "di-27",
+          "speaker": "a",
+          "es": "Sí, hay. Nos vemos a las seis.",
+          "en": "Yes, there is. See you at six.",
+          "start": 65.239,
+          "end": 67.468
+        },
+        {
+          "id": "di-28",
+          "speaker": "b",
+          "es": "De acuerdo. Voy a la panadería ahora.",
+          "en": "Agreed. I'm going to the bakery now.",
+          "start": 67.748,
+          "end": 70.302
+        },
+        {
+          "id": "di-29",
+          "speaker": "a",
+          "es": "Muy bien. Hasta luego.",
+          "en": "Very well. See you later.",
+          "start": 70.582,
+          "end": 72.161
+        },
+        {
+          "id": "di-30",
+          "speaker": "b",
+          "es": "Hasta luego. Adiós.",
+          "en": "See you later. Goodbye.",
+          "start": 72.441,
+          "end": 74.391
+        }
+      ]
+    },
+    {
+      "id": "buying-things",
+      "title": "Buying several things",
+      "situation": "Shopping for a few different items and comparing prices.",
+      "audioKey": "listening:buying-things",
+      "duration": 66.418,
+      "lines": [
+        {
+          "id": "bt-1",
+          "speaker": "b",
+          "es": "Buenas tardes. Quiero comprar algunas cosas.",
+          "en": "Good afternoon. I want to buy a few things.",
+          "start": 0,
+          "end": 2.647
+        },
+        {
+          "id": "bt-2",
+          "speaker": "a",
+          "es": "Buenas tardes. ¿Qué quiere?",
+          "en": "Good afternoon. What do you want?",
+          "start": 2.927,
+          "end": 4.97
+        },
+        {
+          "id": "bt-3",
+          "speaker": "b",
+          "es": "Quiero algo pequeño. ¿Hay algo aquí?",
+          "en": "I want something small. Is there something here?",
+          "start": 5.25,
+          "end": 7.618
+        },
+        {
+          "id": "bt-4",
+          "speaker": "a",
+          "es": "Sí. ¿Quiere esto?",
+          "en": "Yes. Do you want this?",
+          "start": 7.898,
+          "end": 9.709
+        },
+        {
+          "id": "bt-5",
+          "speaker": "b",
+          "es": "Sí. ¿Cuánto cuesta?",
+          "en": "Yes. How much does it cost?",
+          "start": 9.989,
+          "end": 11.661
+        },
+        {
+          "id": "bt-6",
+          "speaker": "a",
+          "es": "Cuesta veinte pesos.",
+          "en": "It costs twenty pesos.",
+          "start": 11.941,
+          "end": 13.566
+        },
+        {
+          "id": "bt-7",
+          "speaker": "b",
+          "es": "¿Hay algo más pequeño?",
+          "en": "Is there something smaller?",
+          "start": 13.846,
+          "end": 15.332
+        },
+        {
+          "id": "bt-8",
+          "speaker": "a",
+          "es": "Sí. Esto cuesta quince pesos.",
+          "en": "Yes. This costs fifteen pesos.",
+          "start": 15.612,
+          "end": 18.584
+        },
+        {
+          "id": "bt-9",
+          "speaker": "b",
+          "es": "Prefiero esto. ¿Puedo comprarlo?",
+          "en": "I prefer this. Can I buy it?",
+          "start": 18.864,
+          "end": 21.186
+        },
+        {
+          "id": "bt-10",
+          "speaker": "a",
+          "es": "Sí. ¿Quiere algo más?",
+          "en": "Yes. Do you want anything else?",
+          "start": 21.466,
+          "end": 23.416
+        },
+        {
+          "id": "bt-11",
+          "speaker": "b",
+          "es": "Sí. Quiero un refresco y un té.",
+          "en": "Yes. I want a soda and a tea.",
+          "start": 23.696,
+          "end": 26.018
+        },
+        {
+          "id": "bt-12",
+          "speaker": "a",
+          "es": "El refresco cuesta cinco. El té cuesta cinco también.",
+          "en": "The soda costs five. The tea costs five too.",
+          "start": 26.298,
+          "end": 30.06
+        },
+        {
+          "id": "bt-13",
+          "speaker": "b",
+          "es": "Diez pesos. ¿Y esto?",
+          "en": "Ten pesos. And this?",
+          "start": 30.34,
+          "end": 32.151
+        },
+        {
+          "id": "bt-14",
+          "speaker": "a",
+          "es": "Quince. En total, treinta y cinco pesos.",
+          "en": "Fifteen. In total, thirty-five pesos.",
+          "start": 32.431,
+          "end": 35.635
+        },
+        {
+          "id": "bt-15",
+          "speaker": "b",
+          "es": "De acuerdo. ¿Puedo pagar con un dólar?",
+          "en": "Agreed. Can I pay with a dollar?",
+          "start": 35.915,
+          "end": 38.469
+        },
+        {
+          "id": "bt-16",
+          "speaker": "a",
+          "es": "Sí. Un dólar es suficiente.",
+          "en": "Yes. One dollar is enough.",
+          "start": 38.749,
+          "end": 41.257
+        },
+        {
+          "id": "bt-17",
+          "speaker": "b",
+          "es": "Excelente. ¿Puede ayudarme con las cosas?",
+          "en": "Excellent. Can you help me with the things?",
+          "start": 41.537,
+          "end": 44.138
+        },
+        {
+          "id": "bt-18",
+          "speaker": "a",
+          "es": "Sí. ¿Quiere ir a su hotel ahora?",
+          "en": "Yes. Do you want to go to your hotel now?",
+          "start": 44.418,
+          "end": 46.926
+        },
+        {
+          "id": "bt-19",
+          "speaker": "b",
+          "es": "Sí. ¿Está lejos?",
+          "en": "Yes. Is it far?",
+          "start": 47.206,
+          "end": 48.739
+        },
+        {
+          "id": "bt-20",
+          "speaker": "a",
+          "es": "No. Está a la izquierda. Tres cuadras.",
+          "en": "No. It's to the left. Three blocks.",
+          "start": 49.019,
+          "end": 51.713
+        },
+        {
+          "id": "bt-21",
+          "speaker": "b",
+          "es": "Puedo ir. Muchas gracias.",
+          "en": "I can go. Thank you very much.",
+          "start": 51.993,
+          "end": 53.711
+        },
+        {
+          "id": "bt-22",
+          "speaker": "a",
+          "es": "De nada. ¿Quiere venir mañana otra vez?",
+          "en": "You're welcome. Do you want to come again tomorrow?",
+          "start": 53.991,
+          "end": 56.685
+        },
+        {
+          "id": "bt-23",
+          "speaker": "b",
+          "es": "Sí. Mañana a las diez. ¿Está bien?",
+          "en": "Yes. Tomorrow at ten. Is that fine?",
+          "start": 56.965,
+          "end": 59.241
+        },
+        {
+          "id": "bt-24",
+          "speaker": "a",
+          "es": "Sí. Nos vemos mañana.",
+          "en": "Yes. See you tomorrow.",
+          "start": 59.521,
+          "end": 61.471
+        },
+        {
+          "id": "bt-25",
+          "speaker": "b",
+          "es": "Hasta mañana. Adiós.",
+          "en": "See you tomorrow. Goodbye.",
+          "start": 61.751,
+          "end": 63.469
+        },
+        {
+          "id": "bt-26",
+          "speaker": "a",
+          "es": "Adiós.",
+          "en": "Goodbye.",
+          "start": 63.749,
+          "end": 64.678
+        }
+      ]
+    },
+    {
+      "id": "friends-catch-up",
+      "title": "Friends catch up",
+      "situation": "A longer conversation between friends about life, plans, and language.",
+      "audioKey": "listening:friends-catch-up",
+      "duration": 110.948,
+      "lines": [
+        {
+          "id": "fc-1",
+          "speaker": "a",
+          "es": "Hola, Carlos. ¿Cómo está usted?",
+          "en": "Hi, Carlos. How are you?",
+          "start": 0,
+          "end": 2.043
+        },
+        {
+          "id": "fc-2",
+          "speaker": "b",
+          "es": "Bien, María. ¿Y usted?",
+          "en": "Fine, María. And you?",
+          "start": 2.323,
+          "end": 3.948
+        },
+        {
+          "id": "fc-3",
+          "speaker": "a",
+          "es": "Muy bien. Hace mucho tiempo.",
+          "en": "Very well. It's been a long time.",
+          "start": 4.228,
+          "end": 6.55
+        },
+        {
+          "id": "fc-4",
+          "speaker": "b",
+          "es": "Sí. ¿Dónde ha estado?",
+          "en": "Yes. Where have you been?",
+          "start": 6.83,
+          "end": 8.595
+        },
+        {
+          "id": "fc-5",
+          "speaker": "a",
+          "es": "He estado en los Estados Unidos. ¿Y usted?",
+          "en": "I've been in the United States. And you?",
+          "start": 8.875,
+          "end": 11.661
+        },
+        {
+          "id": "fc-6",
+          "speaker": "b",
+          "es": "Estoy aquí. Vivo cerca todavía.",
+          "en": "I'm here. I still live nearby.",
+          "start": 11.941,
+          "end": 14.681
+        },
+        {
+          "id": "fc-7",
+          "speaker": "a",
+          "es": "¿Cómo está su familia?",
+          "en": "How is your family?",
+          "start": 14.961,
+          "end": 16.494
+        },
+        {
+          "id": "fc-8",
+          "speaker": "b",
+          "es": "Mi padre y mi madre están bien. ¿Y la suya?",
+          "en": "My father and mother are well. And yours?",
+          "start": 16.774,
+          "end": 19.375
+        },
+        {
+          "id": "fc-9",
+          "speaker": "a",
+          "es": "También están bien. Mi amiga vive en los Estados Unidos.",
+          "en": "They're well too. My friend lives in the United States.",
+          "start": 19.655,
+          "end": 23.231
+        },
+        {
+          "id": "fc-10",
+          "speaker": "b",
+          "es": "¿Habla inglés allí?",
+          "en": "Does she speak English there?",
+          "start": 23.511,
+          "end": 24.765
+        },
+        {
+          "id": "fc-11",
+          "speaker": "a",
+          "es": "Sí. Habla inglés y español.",
+          "en": "Yes. She speaks English and Spanish.",
+          "start": 25.045,
+          "end": 27.367
+        },
+        {
+          "id": "fc-12",
+          "speaker": "b",
+          "es": "Yo quiero aprender más inglés. ¿Puede ayudarme?",
+          "en": "I want to learn more English. Can you help me?",
+          "start": 27.647,
+          "end": 30.851
+        },
+        {
+          "id": "fc-13",
+          "speaker": "a",
+          "es": "Sí. Y usted puede ayudarme con el español.",
+          "en": "Yes. And you can help me with Spanish.",
+          "start": 31.131,
+          "end": 33.917
+        },
+        {
+          "id": "fc-14",
+          "speaker": "b",
+          "es": "De acuerdo. ¿Qué quiere hacer hoy?",
+          "en": "Agreed. What do you want to do today?",
+          "start": 34.197,
+          "end": 36.426
+        },
+        {
+          "id": "fc-15",
+          "speaker": "a",
+          "es": "Quiero tomar algo y hablar. ¿Hay un lugar cerca?",
+          "en": "I want to drink something and talk. Is there a place nearby?",
+          "start": 36.706,
+          "end": 39.725
+        },
+        {
+          "id": "fc-16",
+          "speaker": "b",
+          "es": "Sí. Hay un restaurante a la derecha.",
+          "en": "Yes. There's a restaurant to the right.",
+          "start": 40.005,
+          "end": 42.606
+        },
+        {
+          "id": "fc-17",
+          "speaker": "a",
+          "es": "¿Quiere ir ahora?",
+          "en": "Do you want to go now?",
+          "start": 42.886,
+          "end": 44.279
+        },
+        {
+          "id": "fc-18",
+          "speaker": "b",
+          "es": "Sí. ¿Quiere té o un refresco?",
+          "en": "Yes. Do you want tea or a soda?",
+          "start": 44.559,
+          "end": 46.649
+        },
+        {
+          "id": "fc-19",
+          "speaker": "a",
+          "es": "Quiero té. ¿Y usted?",
+          "en": "I want tea. And you?",
+          "start": 46.929,
+          "end": 48.647
+        },
+        {
+          "id": "fc-20",
+          "speaker": "b",
+          "es": "Yo quiero una cerveza. ¿Le gusta la cerveza?",
+          "en": "I want a beer. Do you like beer?",
+          "start": 48.927,
+          "end": 51.76
+        },
+        {
+          "id": "fc-21",
+          "speaker": "a",
+          "es": "Un poco. Prefiero el té.",
+          "en": "A little. I prefer tea.",
+          "start": 52.04,
+          "end": 53.851
+        },
+        {
+          "id": "fc-22",
+          "speaker": "b",
+          "es": "Está bien. ¿Quiere comer también?",
+          "en": "That's fine. Do you want to eat too?",
+          "start": 54.131,
+          "end": 56.407
+        },
+        {
+          "id": "fc-23",
+          "speaker": "a",
+          "es": "Más tarde. Ahora quiero hablar.",
+          "en": "Later. Right now I want to talk.",
+          "start": 56.687,
+          "end": 59.195
+        },
+        {
+          "id": "fc-24",
+          "speaker": "b",
+          "es": "¿Qué quiere decirme?",
+          "en": "What do you want to tell me?",
+          "start": 59.475,
+          "end": 60.915
+        },
+        {
+          "id": "fc-25",
+          "speaker": "a",
+          "es": "Quiero ir al cine esta noche. ¿Quiere venir?",
+          "en": "I want to go to the movies tonight. Do you want to come?",
+          "start": 61.195,
+          "end": 64.26
+        },
+        {
+          "id": "fc-26",
+          "speaker": "b",
+          "es": "Sí. ¿A qué hora?",
+          "en": "Yes. At what time?",
+          "start": 64.54,
+          "end": 65.887
+        },
+        {
+          "id": "fc-27",
+          "speaker": "a",
+          "es": "A las ocho. ¿Es tarde?",
+          "en": "At eight. Is that late?",
+          "start": 66.167,
+          "end": 68.164
+        },
+        {
+          "id": "fc-28",
+          "speaker": "b",
+          "es": "No. ¿Hay una película buena?",
+          "en": "No. Is there a good movie?",
+          "start": 68.444,
+          "end": 70.162
+        },
+        {
+          "id": "fc-29",
+          "speaker": "a",
+          "es": "Sí. Creo que sí. ¿Vamos juntos?",
+          "en": "Yes. I think so. Shall we go together?",
+          "start": 70.442,
+          "end": 72.718
+        },
+        {
+          "id": "fc-30",
+          "speaker": "b",
+          "es": "Sí, vamos. ¿Quiere hablar con alguien?",
+          "en": "Yes, let's go. Do you want to talk with someone?",
+          "start": 72.998,
+          "end": 75.274
+        },
+        {
+          "id": "fc-31",
+          "speaker": "a",
+          "es": "Sí. Puedo llamar a una amiga por teléfono.",
+          "en": "Yes. I can call a friend on the phone.",
+          "start": 75.554,
+          "end": 78.201
+        },
+        {
+          "id": "fc-32",
+          "speaker": "b",
+          "es": "Excelente. ¿Puede ella venir?",
+          "en": "Excellent. Can she come?",
+          "start": 78.481,
+          "end": 80.896
+        },
+        {
+          "id": "fc-33",
+          "speaker": "a",
+          "es": "Creo que sí. Hablo con ella ahora.",
+          "en": "I think so. I'll talk with her now.",
+          "start": 81.176,
+          "end": 83.73
+        },
+        {
+          "id": "fc-34",
+          "speaker": "b",
+          "es": "De acuerdo. Yo puedo pagar las cosas del cine.",
+          "en": "Agreed. I can pay for the movie things.",
+          "start": 84.01,
+          "end": 87.261
+        },
+        {
+          "id": "fc-35",
+          "speaker": "a",
+          "es": "No. Podemos pagar juntos. ¿Está bien?",
+          "en": "No. We can pay together. Is that okay?",
+          "start": 87.541,
+          "end": 90.142
+        },
+        {
+          "id": "fc-36",
+          "speaker": "b",
+          "es": "Sí. Me gusta. ¿Nos vemos a las siete?",
+          "en": "Yes. I like that. See you at seven?",
+          "start": 90.422,
+          "end": 93.208
+        },
+        {
+          "id": "fc-37",
+          "speaker": "a",
+          "es": "A las siete cerca del cine. ¿Lo conoce?",
+          "en": "At seven near the movie theater. Do you know it?",
+          "start": 93.488,
+          "end": 96.832
+        },
+        {
+          "id": "fc-38",
+          "speaker": "b",
+          "es": "Sí, lo conozco. Está en esa avenida.",
+          "en": "Yes, I know it. It's on that avenue.",
+          "start": 97.112,
+          "end": 99.573
+        },
+        {
+          "id": "fc-39",
+          "speaker": "a",
+          "es": "Excelente. Me gusta verlo otra vez.",
+          "en": "Excellent. I like seeing you again.",
+          "start": 99.853,
+          "end": 102.686
+        },
+        {
+          "id": "fc-40",
+          "speaker": "b",
+          "es": "Yo también. Hasta luego.",
+          "en": "Me too. See you later.",
+          "start": 102.966,
+          "end": 104.638
+        },
+        {
+          "id": "fc-41",
+          "speaker": "a",
+          "es": "Hasta luego. Adiós.",
+          "en": "See you later. Goodbye.",
+          "start": 104.918,
+          "end": 106.543
+        },
+        {
+          "id": "fc-42",
+          "speaker": "b",
+          "es": "Adiós, María.",
+          "en": "Goodbye, María.",
+          "start": 106.823,
+          "end": 108.03
+        }
+      ]
+    }
+  ]
+}

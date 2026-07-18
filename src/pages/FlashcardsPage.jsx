@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { Header } from '../components/Header'
 import {
   getFlashcardsForLevel,
@@ -19,6 +19,7 @@ import {
   audioCacheKey,
   cancelSpeech,
   clearSpeechPrefetch,
+  invalidateSpeechCache,
   normalizeVoiceSpeed,
   prefetchSpanish,
   retainSpeechCache,
@@ -27,6 +28,7 @@ import {
 
 const LEVELS = [1, 2, 3, 4, 5]
 const PIMSLEUR_LEVELS = getPimsleurLevels()
+const LONG_PRESS_MS = 480
 
 const SOURCES = [
   { id: 'phrases', label: 'Phrases', hint: 'Grammar-tagged phrases (Tatoeba)' },
@@ -168,6 +170,11 @@ export function FlashcardsPage({
   const [step, setStep] = useState(0)
   const [sessionSeen, setSessionSeen] = useState(0)
   const [practicingAhead, setPracticingAhead] = useState(false)
+  const [speakMenu, setSpeakMenu] = useState(null)
+  const [regenerating, setRegenerating] = useState(false)
+  const longPressTimer = useRef(null)
+  const longPressTriggered = useRef(false)
+  const speakMenuRef = useRef(null)
 
   useEffect(() => {
     if (isNumbers) {
@@ -274,11 +281,81 @@ export function FlashcardsPage({
   function handleSpeak(event) {
     event?.stopPropagation()
     if (!current) return
+    if (longPressTriggered.current) {
+      longPressTriggered.current = false
+      return
+    }
     speakSpanish(current.es, {
       cacheKey: audioCacheKey(current.id, voiceSpeed),
       speed: voiceSpeed,
     })
   }
+
+  function clearSpeakLongPress() {
+    if (longPressTimer.current) {
+      clearTimeout(longPressTimer.current)
+      longPressTimer.current = null
+    }
+  }
+
+  function openSpeakMenu(event) {
+    event.preventDefault()
+    event.stopPropagation()
+    const rect = event.currentTarget.getBoundingClientRect()
+    setSpeakMenu({
+      x: Math.min(rect.left, window.innerWidth - 200),
+      y: Math.min(rect.bottom + 6, window.innerHeight - 80),
+    })
+  }
+
+  function handleSpeakPointerDown(event) {
+    if (event.button !== 0) return
+    event.stopPropagation()
+    longPressTriggered.current = false
+    clearSpeakLongPress()
+    const rect = event.currentTarget.getBoundingClientRect()
+    longPressTimer.current = setTimeout(() => {
+      longPressTriggered.current = true
+      setSpeakMenu({
+        x: Math.min(rect.left, window.innerWidth - 200),
+        y: Math.min(rect.bottom + 6, window.innerHeight - 80),
+      })
+    }, LONG_PRESS_MS)
+  }
+
+  async function handleRegenerateAudio() {
+    if (!current || regenerating) return
+    setSpeakMenu(null)
+    setRegenerating(true)
+    const cacheKey = audioCacheKey(current.id, voiceSpeed)
+    invalidateSpeechCache(cacheKey)
+    try {
+      await speakSpanish(current.es, {
+        cacheKey,
+        speed: voiceSpeed,
+        force: true,
+      })
+    } finally {
+      setRegenerating(false)
+    }
+  }
+
+  useEffect(() => {
+    if (!speakMenu) return undefined
+    const onPointerDown = (event) => {
+      if (speakMenuRef.current?.contains(event.target)) return
+      setSpeakMenu(null)
+    }
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') setSpeakMenu(null)
+    }
+    window.addEventListener('pointerdown', onPointerDown)
+    window.addEventListener('keydown', onKeyDown)
+    return () => {
+      window.removeEventListener('pointerdown', onPointerDown)
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }, [speakMenu])
 
   function handleVoiceSpeed(nextSpeed) {
     if (nextSpeed === voiceSpeed) return
@@ -458,9 +535,16 @@ export function FlashcardsPage({
             {view.showSpeaker ? (
               <button
                 type="button"
-                className="flashcard-speak"
+                className={`flashcard-speak ${regenerating ? 'is-regenerating' : ''}`}
                 onClick={handleSpeak}
-                aria-label="Play Spanish audio"
+                onPointerDown={handleSpeakPointerDown}
+                onPointerUp={clearSpeakLongPress}
+                onPointerLeave={clearSpeakLongPress}
+                onPointerCancel={clearSpeakLongPress}
+                onContextMenu={openSpeakMenu}
+                disabled={regenerating}
+                aria-label="Play Spanish audio. Press and hold to regenerate."
+                title="Play · hold to regenerate"
               >
                 <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
                   <path
@@ -545,6 +629,25 @@ export function FlashcardsPage({
           </button>
           <button type="button" className="secondary-button" onClick={handleReset}>
             Reset level
+          </button>
+        </div>
+      ) : null}
+
+      {speakMenu ? (
+        <div
+          ref={speakMenuRef}
+          className="listening-line-menu"
+          style={{ left: speakMenu.x, top: speakMenu.y }}
+          role="menu"
+        >
+          <button
+            type="button"
+            role="menuitem"
+            className="listening-line-menu-item"
+            disabled={regenerating}
+            onClick={handleRegenerateAudio}
+          >
+            Regenerate audio
           </button>
         </div>
       ) : null}

@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "upload:audio": "node scripts/upload-to-cloudinary.js --concurrency=10",
     "upload:audio:force": "node scripts/upload-to-cloudinary.js --force --concurrency=10",
-    "build:flashcards": ".venv-flashcards/bin/python scripts/build-flashcards.py"
+    "build:flashcards": ".venv-flashcards/bin/python scripts/build-flashcards.py",
+    "build:listening": "node scripts/build-listening-dialogs.mjs",
+    "build:listening:upload": "node scripts/build-listening-dialogs.mjs --upload"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.109.0",

@@ -16,6 +16,7 @@ dist-ssr
 *.local
 .venv-flashcards
 scripts/.cache
+.cache
 
 # Editor directories and files
 .vscode/*
